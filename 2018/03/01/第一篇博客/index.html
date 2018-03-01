@@ -123,9 +123,12 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/3.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/4.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/7.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/8.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/9.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/luzhi4.gif">
 <meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/6.png">
-<meta property="og:updated_time" content="2018-03-01T07:30:22.000Z">
+<meta property="og:updated_time" content="2018-03-01T09:27:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Hexo&amp;GitHub免费快速搭建博客教程">
 <meta name="twitter:description" content="经过两天的折腾，终于搞定了属于自己的第一个博客的搭建，在此期间踩了许多坑，现总结一下帮助各位能够更方便去搭建自己的博客。先贴上成果 拾忆的博客   百度参考了各路大神的博客文章最后进行的总结，望各路大神不要介意哦~   因为本人长期使用mac电脑，故本篇文章只在mac系统的基础上去实现功能，使用Windows系统需要自行参考，其原理是一样的。   这是本人写的第一篇文章，可能会看到和其他的许多文">
@@ -389,7 +392,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,580
+                  2,986
                 </span>
               
 
@@ -405,7 +408,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  10
+                  11
                 </span>
               
             </div>
@@ -471,6 +474,8 @@
 </li>
 <li><p>下拉找到GitHub Pages, 其中上面红框中的即为你的博客地址，下面红色框中可以进去选择自己的主题样式, 此时github中的基本配置已经完成 </p>
 <p> <img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/5.png" alt="picture5"></p>
+<p> 如第一次进入，可能会不显示博客地址，如下图，则可以先选择github自带的主题样式，Choose a theme 按钮，再回来后就能够看到了</p>
+<p> <img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/7.png" alt="picture7"></p>
 </li>
 </ol>
 <h2 id="三、环境配置"><a href="#三、环境配置" class="headerlink" title="三、环境配置"></a>三、环境配置</h2><ol>
@@ -481,16 +486,19 @@
 </li>
 <li><p>mac系统自带Git环境，Windows用户需要自行下载<a href="https://github.com/waylau/git-for-win" target="_blank" rel="noopener">Git</a></p>
 </li>
-<li><p>安装完成后，通过git命令查看自己的用户名和邮箱是否和自己github中的一致，如不一致请自行更改，如查询到多个用户名须删除没用的用户名，附查看和更改命令（其他命令可自行百度查找）：</p>
+<li><p>安装完成后，通过git命令查看自己的用户名和邮箱是否和自己github中的一致，如不一致请自行更改，如查询到多个用户名须删除没用的用户名，如查询后没有任何反应则表明还没有配置用户名，用下面的修改或者添加用户名命令即可，如提示其他之类的可先执行命令 <code>git config</code>，然后再执行以下命令即可成功,附查看和更改命令（其他命令可自行百度查找）：</p>
 <p> <strong>查看用户名：</strong> <code>git config --global user.name</code></p>
 <p> <strong>查看邮箱：</strong> <code>git config --global user.email</code></p>
 <p> <strong>删除用户名</strong> <code>git config --global --unset user.name 要删的用户名</code></p>
+<p> <strong>增加用户名</strong> <code>git config —global —add user.name 新加的用户名</code></p>
 <p> <strong>修改用户名</strong> <code>git config --global user.name 用户名</code></p>
 <p> <strong>修改邮箱</strong> <code>git config --global user.email 邮箱</code></p>
 </li>
-<li><p>终端中输入 <code>npm install -g hexo-cli</code>(如提示无权限则输入<code>sudo npm install -g hexo-cli</code>,后输入电脑密码enter即可)</p>
+<li><p>终端中输入 <code>npm install -g hexo-cli</code>(如提示无权限即下图红色框中permission denied，则输入<code>sudo npm install -g hexo-cli</code>,后输入电脑密码enter即可)</p>
+<p> <img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/8.png" alt="picture8"></p>
 </li>
-<li><p>这个过程会比较久，如果出现WARN错误可以忽略。我记得当时，每次都会出现说有一个依赖包已经不更新，这个不影响。</p>
+<li><p>这个过程会比较久，如果出现WARN错误可以忽略。我记得当时，每次都会出现说有一个依赖包已经不更新，这个不影响。执行完成后，使用 <code>hexo -v</code> 查看是否安装成功，如下图所示，即表明已经成功安装上</p>
+<p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/9.png" alt="picture9"> </p>
 </li>
 </ol>
 <h2 id="四、网站代码以及设置"><a href="#四、网站代码以及设置" class="headerlink" title="四、网站代码以及设置"></a>四、网站代码以及设置</h2><ol>
@@ -512,11 +520,20 @@
 <li><p>输入hexo g，生存静态文件</p>
 </li>
 <li><p>输入hexo s，启动服务器。默认情况下，访问网址为： <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a><br> 此时服务开启，如需关闭Ctrl+ C</p>
+<blockquote>
+<p>注：hexo s 命令开启的是本地服务，开启后，则可以使用上述地址访问，如关闭，则上述地址访问不到，本功能旨在用来检查修改的配置是否成功，如打开查看后发现没有问题则可以部署到服务器上，之后再用你的博客地址访问即可看到最新的设置效果。</p>
+</blockquote>
+<blockquote>
+<p>如上传服务器之后立即查看博客可能没有立即变化，可尝试多刷新几次或重新打开浏览器即可</p>
+</blockquote>
 </li>
 <li><p>新打开一个终端，输入：ssh-keygen -t rsa -C “Github的注册邮箱地址”</p>
-<p> 一路enter过来，中间有的问题是选y/n的，选y即可，最后得到信息：<br> <code>Your public key has been saved in /Users/zjjk/.ssh/id_rsa.pub.</code></p>
-<p> 找到该文件，打开（sublime text）,Ctrl + a复制里面的所有内容，然后进入Sign in to GitHub：<a href="https://github.com/settings/keys" target="_blank" rel="noopener">github.com/settings/ssh</a></p>
+<p> 一路enter过来，中间有的问题是选y/n的，选y即可，最后得到信息中找到这句话：<br> <code>Your public key has been saved in /Users/zjjk/.ssh/id_rsa.pub.</code></p>
+<p> 找到该文件(上句中in 后面即为该文件的地址)，打开（sublime text）,Ctrl + a复制里面的所有内容，然后进入Sign in to GitHub：<a href="https://github.com/settings/keys" target="_blank" rel="noopener">github.com/settings/ssh</a></p>
 <p> 一步步操作：New SSH key ——Title：blog —— Key：输入刚才复制的—— Add SSH key</p>
+<blockquote>
+<p>注：此过程是生成ssh key，如后续再次执行此命令时，则需要把新生成的SSH key再配置到github中，因为新生成的SSH key会覆盖之前的，如不去github中替换会导致后续上传git服务器过程中失败</p>
+</blockquote>
 </li>
 </ol>
 <h2 id="五、博客网站配置信息"><a href="#五、博客网站配置信息" class="headerlink" title="五、博客网站配置信息"></a>五、博客网站配置信息</h2><ol>
@@ -650,7 +667,7 @@ INFO  Deploying: git
   <p><span>本文标题:</span><a href="/2018/03/01/第一篇博客/">使用Hexo&GitHub免费快速搭建博客教程</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 拾忆 的个人博客">拾忆</a></p>
   <p><span>发布时间:</span>2018年03月01日 - 10:03</p>
-  <p><span>最后更新:</span>2018年03月01日 - 15:03</p>
+  <p><span>最后更新:</span>2018年03月01日 - 17:03</p>
   <p><span>原始链接:</span><a href="/2018/03/01/第一篇博客/" title="使用Hexo&GitHub免费快速搭建博客教程">http://yoursite.com/2018/03/01/第一篇博客/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/03/01/第一篇博客/"  aria-label="复制成功！"></i></span>
   </p>
@@ -920,7 +937,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共2.6k字</span>
+  <span class="post-count">博客全站共3.0k字</span>
 </div>
         
 
