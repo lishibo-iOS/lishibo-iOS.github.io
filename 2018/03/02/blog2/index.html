@@ -118,7 +118,7 @@
 <meta property="og:site_name" content="拾忆的技术博客">
 <meta property="og:description" content="一、前言 在上篇文章中提到了如何免费通过github和hexo创建一个自己的博客，在此将通过next为例，演示一遍配置的过程（喜欢其他主题的可以在此绕过了）  常用命令及文件地址：部署到本地预览查看三部曲： hexo clean （主要是用来清理缓存之类的，最好每次都用一下，以防没有刷新成功） hexo g  hexo s (此时可本地预览查看)  部署到git服务器上： hexo deploy">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-02T05:51:07.000Z">
+<meta property="og:updated_time" content="2018-03-02T07:00:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用next主题配置博客基本信息">
 <meta name="twitter:description" content="一、前言 在上篇文章中提到了如何免费通过github和hexo创建一个自己的博客，在此将通过next为例，演示一遍配置的过程（喜欢其他主题的可以在此绕过了）  常用命令及文件地址：部署到本地预览查看三部曲： hexo clean （主要是用来清理缓存之类的，最好每次都用一下，以防没有刷新成功） hexo g  hexo s (此时可本地预览查看)  部署到git服务器上： hexo deploy">
@@ -361,6 +361,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/02/blog2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/03/02/blog2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -381,7 +391,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,257
+                  2,274
                 </span>
               
 
@@ -425,11 +435,11 @@
 hexo clean （主要是用来清理缓存之类的，最好每次都用一下，以防没有刷新成功）
 hexo g 
 hexo s (此时可本地预览查看)
-</code></pre><hr>
-<pre><code>部署到git服务器上：
+
+部署到git服务器上：
 hexo deploy 
-</code></pre><hr>
-<pre><code>博客配置文件地址：
+
+博客配置文件地址：
 ~/blog/_config.yml
 主题配置文件地址
 ~/blog/themes/next/_config.yml
@@ -529,7 +539,7 @@ menu_icons:
   categories: 分类
   tags: 标签
   about: 关于
-</code></pre><p><strong>（3）设定菜单项的图标，对应的字段是 menu_icons。 此设定格式是 item name: icon name，其中 item name 与上一步所配置的菜单名字对应，icon name 是 <a href="http://www.bootcss.com/p/font-awesome/#icons-web-app" target="_blank" rel="noopener">Font Awesome</a> 图标的 名字。而 enable 可用于控制是否显示图标，你可以设置成 false 来去掉图标。next主题默认集成了识别<a href="http://www.bootcss.com/p/font-awesome/#icons-web-app" target="_blank" rel="noopener">Font Awesome</a>图片的方式，只需要在里面找到想要图标的名称，就可以拿过来使用</strong></p>
+</code></pre><p><strong>（3）设定菜单项的图标，对应的字段是 menu_icons。 此设定格式是 item name: icon name，其中 item name 与上一步所配置的菜单名字对应，icon name 是 <a href="http://www.bootcss.com/p/font-awesome/#icons-web-app" target="_blank" rel="noopener">Font Awesome</a> 图标的 名字,去掉前缀icon-(或使用<a href="https://fontawesome.com/icons?d=gallery" target="_blank" rel="noopener">图标库</a>中的图片名称)。而 enable 可用于控制是否显示图标，你可以设置成 false 来去掉图标。next主题默认集成了识别<a href="http://www.bootcss.com/p/font-awesome/#icons-web-app" target="_blank" rel="noopener">Font Awesome</a>图片的方式，只需要在里面找到想要图标的名称，就可以拿过来使用</strong></p>
 <pre><code># Enable/Disable menu icons.
 menu_icons:
   enable: true
@@ -708,7 +718,7 @@ links:
   <p><span>本文标题:</span><a href="/2018/03/02/blog2/">使用next主题配置博客基本信息</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 拾忆 的个人博客">拾忆</a></p>
   <p><span>发布时间:</span>2018年03月02日 - 09:03</p>
-  <p><span>最后更新:</span>2018年03月02日 - 13:03</p>
+  <p><span>最后更新:</span>2018年03月02日 - 15:03</p>
   <p><span>原始链接:</span><a href="/2018/03/02/blog2/" title="使用next主题配置博客基本信息">http://yoursite.com/2018/03/02/blog2/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/03/02/blog2/"  aria-label="复制成功！"></i></span>
   </p>
@@ -819,6 +829,13 @@ var jiathis_config={
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
 
   
 
@@ -995,15 +1012,11 @@ var jiathis_config={
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
-  <span class="post-meta-divider">|</span>
 
 
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -1146,6 +1159,43 @@ var jiathis_config={
 
 
 
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'lishibo-iOS',
+            repo: 'lishibo-iOS.github.io',
+            
+            lang: "zh-Hans" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '04cc0fdebb6ab8be5160fcd88ac6dce1f5ec004a',
+            
+                client_id: '284cbe9480e1f1720ad5'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
 
 
 

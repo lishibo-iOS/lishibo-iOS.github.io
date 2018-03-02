@@ -97,7 +97,7 @@
 
 
 
-  <meta name="keywords" content="github,hexo,next," />
+  <meta name="keywords" content="hexo,next,github," />
 
 
 
@@ -111,7 +111,7 @@
 
 
 <meta name="description" content="经过两天的折腾，终于搞定了属于自己的第一个博客的搭建，在此期间踩了许多坑，现总结一下帮助各位能够更方便去搭建自己的博客。先贴上成果 拾忆的博客   百度参考了各路大神的博客文章最后进行的总结，望各路大神不要介意哦~   因为本人长期使用mac电脑，故本篇文章只在mac系统的基础上去实现功能，使用Windows系统需要自行参考，其原理是一样的。   这是本人写的第一篇文章，可能会看到和其他的许多文">
-<meta name="keywords" content="github,hexo,next">
+<meta name="keywords" content="hexo,next,github">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Hexo&amp;GitHub免费快速搭建博客教程">
 <meta property="og:url" content="http://yoursite.com/2018/03/01/第一篇博客/index.html">
@@ -371,6 +371,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/01/第一篇博客/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/03/01/第一篇博客/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -703,11 +713,11 @@ INFO  Deploying: git
       
         <div class="post-tags">
           
-            <a href="/tags/github/" rel="tag"><i class="fa fa-tag"></i> github</a>
-          
             <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
           
             <a href="/tags/next/" rel="tag"><i class="fa fa-tag"></i> next</a>
+          
+            <a href="/tags/github/" rel="tag"><i class="fa fa-tag"></i> github</a>
           
         </div>
       
@@ -780,6 +790,13 @@ var jiathis_config={
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
 
   
 
@@ -956,15 +973,11 @@ var jiathis_config={
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
-  <span class="post-meta-divider">|</span>
 
 
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -1107,6 +1120,43 @@ var jiathis_config={
 
 
 
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'lishibo-iOS',
+            repo: 'lishibo-iOS.github.io',
+            
+            lang: "zh-Hans" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '04cc0fdebb6ab8be5160fcd88ac6dce1f5ec004a',
+            
+                client_id: '284cbe9480e1f1720ad5'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
 
 
 
