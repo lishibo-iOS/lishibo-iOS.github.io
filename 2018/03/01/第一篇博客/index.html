@@ -128,7 +128,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/9.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/luzhi4.gif">
 <meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/6.png">
-<meta property="og:updated_time" content="2018-03-01T09:27:28.000Z">
+<meta property="og:updated_time" content="2018-03-02T01:28:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Hexo&amp;GitHub免费快速搭建博客教程">
 <meta name="twitter:description" content="经过两天的折腾，终于搞定了属于自己的第一个博客的搭建，在此期间踩了许多坑，现总结一下帮助各位能够更方便去搭建自己的博客。先贴上成果 拾忆的博客   百度参考了各路大神的博客文章最后进行的总结，望各路大神不要介意哦~   因为本人长期使用mac电脑，故本篇文章只在mac系统的基础上去实现功能，使用Windows系统需要自行参考，其原理是一样的。   这是本人写的第一篇文章，可能会看到和其他的许多文">
@@ -392,7 +392,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,986
+                  3,014
                 </span>
               
 
@@ -529,7 +529,7 @@
 </li>
 <li><p>新打开一个终端，输入：ssh-keygen -t rsa -C “Github的注册邮箱地址”</p>
 <p> 一路enter过来，中间有的问题是选y/n的，选y即可，最后得到信息中找到这句话：<br> <code>Your public key has been saved in /Users/zjjk/.ssh/id_rsa.pub.</code></p>
-<p> 找到该文件(上句中in 后面即为该文件的地址)，打开（sublime text）,Ctrl + a复制里面的所有内容，然后进入Sign in to GitHub：<a href="https://github.com/settings/keys" target="_blank" rel="noopener">github.com/settings/ssh</a></p>
+<p> 找到该文件(上句中in 后面即为该文件的地址)，打开（使用sublime text或其他编辑器）,Ctrl + a复制里面的所有内容，然后进入Sign in to GitHub：<a href="https://github.com/settings/keys" target="_blank" rel="noopener">github.com/settings/ssh</a></p>
 <p> 一步步操作：New SSH key ——Title：blog —— Key：输入刚才复制的—— Add SSH key</p>
 <blockquote>
 <p>注：此过程是生成ssh key，如后续再次执行此命令时，则需要把新生成的SSH key再配置到github中，因为新生成的SSH key会覆盖之前的，如不去github中替换会导致后续上传git服务器过程中失败</p>
@@ -547,7 +547,7 @@
 <p> <code>language: zh-CN</code></p>
 <p> <code>timezone: Asia/Shanghai</code></p>
 </li>
-<li><p>在_config.yml文件中找到 <code>deploy</code>配置处（一般在最下面）, username替换成你自己的username, repository的地址为你在github中创建的那个项目的地址，可去github中复制</p>
+<li><p>在_config.yml文件中找到 <code>deploy</code>配置处（一般在最下面，默认的显示可能不全，需按照下方示例自己添加）, username替换成你自己的username, repository的地址为你在github中创建的那个项目的地址，可去github中复制</p>
 <p> <img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/luzhi4.gif" alt="gif1"></p>
 <pre><code>deploy: 
 
@@ -667,7 +667,7 @@ INFO  Deploying: git
   <p><span>本文标题:</span><a href="/2018/03/01/第一篇博客/">使用Hexo&GitHub免费快速搭建博客教程</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 拾忆 的个人博客">拾忆</a></p>
   <p><span>发布时间:</span>2018年03月01日 - 10:03</p>
-  <p><span>最后更新:</span>2018年03月01日 - 17:03</p>
+  <p><span>最后更新:</span>2018年03月02日 - 09:03</p>
   <p><span>原始链接:</span><a href="/2018/03/01/第一篇博客/" title="使用Hexo&GitHub免费快速搭建博客教程">http://yoursite.com/2018/03/01/第一篇博客/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/03/01/第一篇博客/"  aria-label="复制成功！"></i></span>
   </p>
