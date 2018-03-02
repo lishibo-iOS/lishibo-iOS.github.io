@@ -128,7 +128,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/9.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/luzhi4.gif">
 <meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/6.png">
-<meta property="og:updated_time" content="2018-03-02T01:28:07.000Z">
+<meta property="og:updated_time" content="2018-03-02T02:56:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Hexo&amp;GitHub免费快速搭建博客教程">
 <meta name="twitter:description" content="经过两天的折腾，终于搞定了属于自己的第一个博客的搭建，在此期间踩了许多坑，现总结一下帮助各位能够更方便去搭建自己的博客。先贴上成果 拾忆的博客   百度参考了各路大神的博客文章最后进行的总结，望各路大神不要介意哦~   因为本人长期使用mac电脑，故本篇文章只在mac系统的基础上去实现功能，使用Windows系统需要自行参考，其原理是一样的。   这是本人写的第一篇文章，可能会看到和其他的许多文">
@@ -392,7 +392,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,014
+                  3,034
                 </span>
               
 
@@ -474,7 +474,7 @@
 </li>
 <li><p>下拉找到GitHub Pages, 其中上面红框中的即为你的博客地址，下面红色框中可以进去选择自己的主题样式, 此时github中的基本配置已经完成 </p>
 <p> <img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/5.png" alt="picture5"></p>
-<p> 如第一次进入，可能会不显示博客地址，如下图，则可以先选择github自带的主题样式，Choose a theme 按钮，再回来后就能够看到了</p>
+<p> 如第一次进入，可能会不显示博客地址，如下图，则可以先选择github自带的主题样式，Choose a theme 按钮，再回来后就能够看到了(<strong>注意：在save按钮左边那项要显示为master branch才表示正确</strong>)</p>
 <p> <img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/7.png" alt="picture7"></p>
 </li>
 </ol>
@@ -599,7 +599,7 @@ INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
 <pre><code> $ hexo deploy
 INFO  Deploying: git
 </code></pre><p> 此时可能会出现 <code>error deployer not found:git</code> 的错误，输入以下代码 </p>
-<p> <code>npm install hexo-deployer-git –-save</code>(如提示无权限错误则输入<code>sudo npm install hexo-deployer-git –-save</code>，后输入电脑密码enter即可)</p>
+<p> <code>npm install hexo-deployer-git --save</code>(如提示无权限错误则输入<code>sudo npm install hexo-deployer-git –-save</code>，后输入电脑密码enter即可)</p>
 <p> 再次执行 <code>hexo deploy</code></p>
 <p> 其中，可能会出现github登录界面，正常填写就行(这里我一直登陆着github，暂时没有遇到)</p>
 <p> 完成，终端可Ctrl+C关闭本地服务，然后打开 username.github.io 即可访问自己的博客（username为自己的github的用户名）</p>
@@ -667,7 +667,7 @@ INFO  Deploying: git
   <p><span>本文标题:</span><a href="/2018/03/01/第一篇博客/">使用Hexo&GitHub免费快速搭建博客教程</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 拾忆 的个人博客">拾忆</a></p>
   <p><span>发布时间:</span>2018年03月01日 - 10:03</p>
-  <p><span>最后更新:</span>2018年03月02日 - 09:03</p>
+  <p><span>最后更新:</span>2018年03月02日 - 10:03</p>
   <p><span>原始链接:</span><a href="/2018/03/01/第一篇博客/" title="使用Hexo&GitHub免费快速搭建博客教程">http://yoursite.com/2018/03/01/第一篇博客/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/03/01/第一篇博客/"  aria-label="复制成功！"></i></span>
   </p>
@@ -712,6 +712,22 @@ INFO  Deploying: git
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/02/blog2/" rel="prev" title="使用next主题配置博客基本信息">
+                使用next主题配置博客基本信息 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -813,7 +829,7 @@ var jiathis_config={
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -868,6 +884,20 @@ var jiathis_config={
           
 
           
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.baidu.com/" title="百度" target="_blank">百度</a>
+                  </li>
+                
+              </ul>
+            </div>
           
 
           
@@ -937,7 +967,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共3.0k字</span>
+  <span class="post-count">博客全站共5.3k字</span>
 </div>
         
 
