@@ -110,18 +110,20 @@
 
 
 
-<meta name="description" content="一、前言 在上篇文章中提到了如何免费通过github和hexo创建一个自己的博客，在此将通过next为例，演示一遍配置的过程（喜欢其他主题的可以在此绕过了）  常用命令及文件地址：部署到本地预览查看三部曲： hexo clean （主要是用来清理缓存之类的，最好每次都用一下，以防没有刷新成功） hexo g  hexo s (此时可本地预览查看)  部署到git服务器上： hexo deploy">
+<meta name="description" content="一、前言 在上篇文章中提到了如何免费通过github和hexo创建一个自己的博客，在此将通过next为例，演示一遍配置的过程（喜欢其他主题的可以在此绕过了）  常用命令及文件地址：部署到本地预览查看三部曲： hexo clean （清除缓存） hexo g (生成静态网页) hexo s (本地启动预览查看)  部署到git服务器上： hexo deploy   博客配置文件地址： ~/blog/">
 <meta name="keywords" content="hexo,next">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用next主题配置博客基本信息">
 <meta property="og:url" content="http://yoursite.com/2018/03/02/blog2/index.html">
 <meta property="og:site_name" content="拾忆的技术博客">
-<meta property="og:description" content="一、前言 在上篇文章中提到了如何免费通过github和hexo创建一个自己的博客，在此将通过next为例，演示一遍配置的过程（喜欢其他主题的可以在此绕过了）  常用命令及文件地址：部署到本地预览查看三部曲： hexo clean （主要是用来清理缓存之类的，最好每次都用一下，以防没有刷新成功） hexo g  hexo s (此时可本地预览查看)  部署到git服务器上： hexo deploy">
+<meta property="og:description" content="一、前言 在上篇文章中提到了如何免费通过github和hexo创建一个自己的博客，在此将通过next为例，演示一遍配置的过程（喜欢其他主题的可以在此绕过了）  常用命令及文件地址：部署到本地预览查看三部曲： hexo clean （清除缓存） hexo g (生成静态网页) hexo s (本地启动预览查看)  部署到git服务器上： hexo deploy   博客配置文件地址： ~/blog/">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-02T07:50:12.000Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/10.png">
+<meta property="og:updated_time" content="2018-03-02T08:45:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用next主题配置博客基本信息">
-<meta name="twitter:description" content="一、前言 在上篇文章中提到了如何免费通过github和hexo创建一个自己的博客，在此将通过next为例，演示一遍配置的过程（喜欢其他主题的可以在此绕过了）  常用命令及文件地址：部署到本地预览查看三部曲： hexo clean （主要是用来清理缓存之类的，最好每次都用一下，以防没有刷新成功） hexo g  hexo s (此时可本地预览查看)  部署到git服务器上： hexo deploy">
+<meta name="twitter:description" content="一、前言 在上篇文章中提到了如何免费通过github和hexo创建一个自己的博客，在此将通过next为例，演示一遍配置的过程（喜欢其他主题的可以在此绕过了）  常用命令及文件地址：部署到本地预览查看三部曲： hexo clean （清除缓存） hexo g (生成静态网页) hexo s (本地启动预览查看)  部署到git服务器上： hexo deploy   博客配置文件地址： ~/blog/">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/10.png">
 
 
 
@@ -391,7 +393,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,532
+                  2,555
                 </span>
               
 
@@ -432,9 +434,9 @@
 <p>在上篇文章中提到了如何免费通过github和hexo创建一个自己的博客，在此将通过next为例，演示一遍配置的过程（喜欢其他主题的可以在此绕过了）</p>
 </blockquote>
 <h4 id="常用命令及文件地址："><a href="#常用命令及文件地址：" class="headerlink" title="常用命令及文件地址："></a>常用命令及文件地址：</h4><pre><code>部署到本地预览查看三部曲：
-hexo clean （主要是用来清理缓存之类的，最好每次都用一下，以防没有刷新成功）
-hexo g 
-hexo s (此时可本地预览查看)
+hexo clean （清除缓存）
+hexo g (生成静态网页)
+hexo s (本地启动预览查看)
 
 部署到git服务器上：
 hexo deploy 
@@ -695,6 +697,9 @@ links:
 <p><strong>网易云跟贴</strong> 2017年08月01日也停止服务了</p>
 <p><strong>来必力</strong> (韩国人弄的)总是乱码</p>
 <p><strong>DISQUS</strong> 外国的，界面又丑，加载又慢 </p>
+<p>###（二） 隐藏网页底部powered By Hexo / 强力驱动</p>
+<p>打开主题配置文件，找到如下图位置，将powered设置为 false，theme下的enable 设置为 false</p>
+<p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/10.png" alt="picture10"></p>
 
       
     </div>
@@ -725,7 +730,7 @@ links:
   <p><span>本文标题:</span><a href="/2018/03/02/blog2/">使用next主题配置博客基本信息</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 拾忆 的个人博客">拾忆</a></p>
   <p><span>发布时间:</span>2018年03月02日 - 09:03</p>
-  <p><span>最后更新:</span>2018年03月02日 - 15:03</p>
+  <p><span>最后更新:</span>2018年03月02日 - 16:03</p>
   <p><span>原始链接:</span><a href="/2018/03/02/blog2/" title="使用next主题配置博客基本信息">http://yoursite.com/2018/03/02/blog2/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/03/02/blog2/"  aria-label="复制成功！"></i></span>
   </p>
@@ -1235,3 +1240,7 @@ var jiathis_config={
 
 </body>
 </html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+
