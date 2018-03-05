@@ -119,7 +119,7 @@
 <meta property="og:description" content="一、前言 在上篇文章中提到了如何免费通过github和hexo创建一个自己的博客，在此将通过next为例，演示一遍配置的过程（喜欢其他主题的可以在此绕过了）  常用命令及文件地址：部署到本地预览查看三部曲： hexo clean （清除缓存） hexo g (生成静态网页) hexo s (本地启动预览查看)  部署到git服务器上： hexo deploy   博客配置文件地址： ~/blog/">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/10.png">
-<meta property="og:updated_time" content="2018-03-05T06:07:27.000Z">
+<meta property="og:updated_time" content="2018-03-05T07:50:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用next主题配置博客基本信息">
 <meta name="twitter:description" content="一、前言 在上篇文章中提到了如何免费通过github和hexo创建一个自己的博客，在此将通过next为例，演示一遍配置的过程（喜欢其他主题的可以在此绕过了）  常用命令及文件地址：部署到本地预览查看三部曲： hexo clean （清除缓存） hexo g (生成静态网页) hexo s (本地启动预览查看)  部署到git服务器上： hexo deploy   博客配置文件地址： ~/blog/">
@@ -437,7 +437,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,686 字
+                  2,804 字
                 </span>
               
 
@@ -489,7 +489,8 @@ hexo deploy
 ~/blog/_config.yml
 主题配置文件地址
 ~/blog/themes/next/_config.yml
-</code></pre><h2 id="二、next主题的安装和基本配置"><a href="#二、next主题的安装和基本配置" class="headerlink" title="二、next主题的安装和基本配置"></a>二、next主题的安装和基本配置</h2><h3 id="（一）安装"><a href="#（一）安装" class="headerlink" title="（一）安装"></a>（一）安装</h3><p>首先从github上clone到本地，在终端cd 到blog文件夹（即你通过Hexo init生成的根目录），然后在终端输入命令：</p>
+</code></pre><p>记住这些名字，后面不再重复解释</p>
+<h2 id="二、next主题的安装和基本配置"><a href="#二、next主题的安装和基本配置" class="headerlink" title="二、next主题的安装和基本配置"></a>二、next主题的安装和基本配置</h2><h3 id="（一）安装"><a href="#（一）安装" class="headerlink" title="（一）安装"></a>（一）安装</h3><p>首先从github上clone到本地，在终端cd 到blog文件夹（即你通过Hexo init生成的根目录），然后在终端输入命令：</p>
 <pre><code>git clone https://github.com/iissnan/hexo-theme-next themes/next
 </code></pre><p>进入blog的全局配置文件：_config.yml （在blog文件夹下 /blog/_config.yml）</p>
 <p>找到theme字段：设置为</p>
@@ -760,7 +761,26 @@ auto_excerpt:
 <li>把enable改为对应的false改为true，length设置下，然后hexo d -g，再进主页，问题就解决了！</li>
 </ul>
 <hr>
-<h3 id="（四）其他炫酷效果可参考-hexo的next主题个性化教程-打造炫酷网站"><a href="#（四）其他炫酷效果可参考-hexo的next主题个性化教程-打造炫酷网站" class="headerlink" title="（四）其他炫酷效果可参考 hexo的next主题个性化教程:打造炫酷网站"></a>（四）其他炫酷效果可参考 <a href="https://www.jianshu.com/p/f054333ac9e6" target="_blank" rel="noopener">hexo的next主题个性化教程:打造炫酷网站</a></h3>
+<h3 id="（四）-增加本地搜索功能"><a href="#（四）-增加本地搜索功能" class="headerlink" title="（四） 增加本地搜索功能"></a>（四） 增加本地搜索功能</h3><h4 id="添加百度-谷歌-本地-自定义站点内容搜索"><a href="#添加百度-谷歌-本地-自定义站点内容搜索" class="headerlink" title="添加百度/谷歌/本地 自定义站点内容搜索"></a>添加百度/谷歌/本地 自定义站点内容搜索</h4><ol>
+<li><p>安装 hexo-generator-searchdb，在站点的根目录下执行以下命令：</p>
+<pre><code>npm install hexo-generator-searchdb --save
+</code></pre></li>
+<li><p>编辑博客配置文件，新增以下内容到任意位置：</p>
+<pre><code>search:
+      path: search.xml
+      field: post
+      format: html
+      limit: 10000
+</code></pre></li>
+<li><p>编辑主题配置文件，启用本地搜索功能：</p>
+<pre><code># Local search
+local_search:
+  enable: true
+</code></pre></li>
+</ol>
+<hr>
+<h3 id="（五）其他炫酷效果可参考-hexo的next主题个性化教程-打造炫酷网站"><a href="#（五）其他炫酷效果可参考-hexo的next主题个性化教程-打造炫酷网站" class="headerlink" title="（五）其他炫酷效果可参考 hexo的next主题个性化教程:打造炫酷网站"></a>（五）其他炫酷效果可参考 <a href="https://www.jianshu.com/p/f054333ac9e6" target="_blank" rel="noopener">hexo的next主题个性化教程:打造炫酷网站</a></h3><hr>
+
       
     </div>
     
@@ -1029,7 +1049,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、前言"><span class="nav-number">1.</span> <span class="nav-text">一、前言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用命令及文件地址："><span class="nav-number">1.0.1.</span> <span class="nav-text">常用命令及文件地址：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、next主题的安装和基本配置"><span class="nav-number">2.</span> <span class="nav-text">二、next主题的安装和基本配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（一）安装"><span class="nav-number">2.1.</span> <span class="nav-text">（一）安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（二）-基本信息的配置"><span class="nav-number">2.2.</span> <span class="nav-text">（二） 基本信息的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、网站标题、作者、语言"><span class="nav-number">2.2.1.</span> <span class="nav-text">1、网站标题、作者、语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、next主题的风格设置"><span class="nav-number">2.2.2.</span> <span class="nav-text">2、next主题的风格设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、设置菜单选项"><span class="nav-number">2.2.3.</span> <span class="nav-text">3、设置菜单选项</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、创建上述菜单选项中对应的页面"><span class="nav-number">2.2.4.</span> <span class="nav-text">4、创建上述菜单选项中对应的页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、给文章添加分类和标签"><span class="nav-number">2.2.5.</span> <span class="nav-text">5、给文章添加分类和标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-修改作者头像并旋转"><span class="nav-number">2.2.6.</span> <span class="nav-text">6.修改作者头像并旋转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-头像下方添加自己的github等信息"><span class="nav-number">2.2.7.</span> <span class="nav-text">7.头像下方添加自己的github等信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-给站点添加友情链接功能"><span class="nav-number">2.2.8.</span> <span class="nav-text">8.给站点添加友情链接功能</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、next主题的高级配置和一些炫酷的效果"><span class="nav-number">3.</span> <span class="nav-text">三、next主题的高级配置和一些炫酷的效果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（一）-增加评论系统"><span class="nav-number">3.1.</span> <span class="nav-text">（一） 增加评论系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（二）-隐藏网页底部powered-By-Hexo-强力驱动"><span class="nav-number">3.2.</span> <span class="nav-text">（二） 隐藏网页底部powered By Hexo / 强力驱动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（三）-设置首页文章列表不显示全文-只显示预览"><span class="nav-number">3.3.</span> <span class="nav-text">（三） 设置首页文章列表不显示全文(只显示预览)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（四）其他炫酷效果可参考-hexo的next主题个性化教程-打造炫酷网站"><span class="nav-number">3.4.</span> <span class="nav-text">（四）其他炫酷效果可参考 hexo的next主题个性化教程:打造炫酷网站</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、前言"><span class="nav-number">1.</span> <span class="nav-text">一、前言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用命令及文件地址："><span class="nav-number">1.0.1.</span> <span class="nav-text">常用命令及文件地址：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、next主题的安装和基本配置"><span class="nav-number">2.</span> <span class="nav-text">二、next主题的安装和基本配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（一）安装"><span class="nav-number">2.1.</span> <span class="nav-text">（一）安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（二）-基本信息的配置"><span class="nav-number">2.2.</span> <span class="nav-text">（二） 基本信息的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、网站标题、作者、语言"><span class="nav-number">2.2.1.</span> <span class="nav-text">1、网站标题、作者、语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、next主题的风格设置"><span class="nav-number">2.2.2.</span> <span class="nav-text">2、next主题的风格设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、设置菜单选项"><span class="nav-number">2.2.3.</span> <span class="nav-text">3、设置菜单选项</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、创建上述菜单选项中对应的页面"><span class="nav-number">2.2.4.</span> <span class="nav-text">4、创建上述菜单选项中对应的页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、给文章添加分类和标签"><span class="nav-number">2.2.5.</span> <span class="nav-text">5、给文章添加分类和标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-修改作者头像并旋转"><span class="nav-number">2.2.6.</span> <span class="nav-text">6.修改作者头像并旋转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-头像下方添加自己的github等信息"><span class="nav-number">2.2.7.</span> <span class="nav-text">7.头像下方添加自己的github等信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-给站点添加友情链接功能"><span class="nav-number">2.2.8.</span> <span class="nav-text">8.给站点添加友情链接功能</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、next主题的高级配置和一些炫酷的效果"><span class="nav-number">3.</span> <span class="nav-text">三、next主题的高级配置和一些炫酷的效果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（一）-增加评论系统"><span class="nav-number">3.1.</span> <span class="nav-text">（一） 增加评论系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（二）-隐藏网页底部powered-By-Hexo-强力驱动"><span class="nav-number">3.2.</span> <span class="nav-text">（二） 隐藏网页底部powered By Hexo / 强力驱动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（三）-设置首页文章列表不显示全文-只显示预览"><span class="nav-number">3.3.</span> <span class="nav-text">（三） 设置首页文章列表不显示全文(只显示预览)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（四）-增加本地搜索功能"><span class="nav-number">3.4.</span> <span class="nav-text">（四） 增加本地搜索功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加百度-谷歌-本地-自定义站点内容搜索"><span class="nav-number">3.4.1.</span> <span class="nav-text">添加百度/谷歌/本地 自定义站点内容搜索</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（五）其他炫酷效果可参考-hexo的next主题个性化教程-打造炫酷网站"><span class="nav-number">3.5.</span> <span class="nav-text">（五）其他炫酷效果可参考 hexo的next主题个性化教程:打造炫酷网站</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1077,7 +1097,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共5.7k字</span>
+  <span class="post-count">博客全站共5.8k字</span>
 </div>
         
 
