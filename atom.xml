@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-05T07:57:06.000Z</updated>
+  <updated>2018-03-07T07:25:05.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>RSS订阅工具</title>
+    <link href="http://yoursite.com/2018/03/07/blog3/"/>
+    <id>http://yoursite.com/2018/03/07/blog3/</id>
+    <published>2018-03-07T07:18:46.000Z</published>
+    <updated>2018-03-07T07:25:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><p>####RSS订阅工具推荐</p><p>  <a href="http://www.pc6.com/wenjian/ydq/" target="_blank" rel="noopener">RSS工具大全</a></p><p>  推荐使用：<a href="http://www.smzy.com/mac/317267.html" target="_blank" rel="noopener">Breaking</a> （中文， 页面简洁）</p><p>  将你喜欢的博客地址复制到Breaking中的搜索框中，会自动订阅，方便关注博客的动态</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;####RSS订阅工具推荐&lt;/p&gt;
+&lt;p&gt;  &lt;a href=&quot;http://www.pc6.com/wenjian/ydq/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;RSS工具大全&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;  推荐使用：&lt;a hre
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="RSS" scheme="http://yoursite.com/tags/RSS/"/>
+    
+  </entry>
   
   <entry>
     <title>使用next主题配置博客基本信息</title>
