@@ -42,6 +42,29 @@
   </entry>
   
   <entry>
+    <title>iOS 小技巧 ---- 方法总结</title>
+    <link href="http://yoursite.com/2018/03/15/blog6/"/>
+    <id>http://yoursite.com/2018/03/15/blog6/</id>
+    <published>2018-03-15T04:00:00.000Z</published>
+    <updated>2018-03-15T08:04:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="iOS中一些不常用方法总结："><a href="#iOS中一些不常用方法总结：" class="headerlink" title="iOS中一些不常用方法总结："></a>iOS中一些不常用方法总结：</h2><h3 id="1-删除navigationController中的某个VC"><a href="#1-删除navigationController中的某个VC" class="headerlink" title="1. 删除navigationController中的某个VC"></a>1. 删除navigationController中的某个VC</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSMutableArray</span> *tempMarr = [<span class="built_in">NSMutableArray</span> arrayWithArray:<span class="keyword">self</span>.navigationController.viewControllers];</span><br><span class="line">        <span class="keyword">if</span> (tempMarr.count &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            </span><br><span class="line">            [tempMarr removeObjectAtIndex:tempMarr.count<span class="number">-2</span>];</span><br><span class="line">            </span><br><span class="line">            [<span class="keyword">self</span>.navigationController setViewControllers:tempMarr animated:<span class="literal">NO</span>];</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;iOS中一些不常用方法总结：&quot;&gt;&lt;a href=&quot;#iOS中一些不常用方法总结：&quot; class=&quot;headerlink&quot; title=&quot;iOS中一些不常用方法总结：&quot;&gt;&lt;/a&gt;iOS中一些不常用方法总结：&lt;/h2&gt;&lt;h3 id=&quot;1-删除navigationCon
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>iOS多线程 ---- GCD使用总结</title>
     <link href="http://yoursite.com/2018/03/14/blog4/"/>
     <id>http://yoursite.com/2018/03/14/blog4/</id>
