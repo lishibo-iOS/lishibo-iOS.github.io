@@ -110,17 +110,17 @@
 
 
 
-<meta name="description" content="iOS中一些不常用方法总结：1. 删除navigationController中的某个VC12345678NSMutableArray *tempMarr = [NSMutableArray arrayWithArray:self.navigationController.viewControllers];        if (tempMarr.count &amp;gt; 0) &amp;#123;">
+<meta name="description" content="iOS中一些不常用方法总结：1. 删除navigationController中的某个VC12345678NSMutableArray *tempMarr = [NSMutableArray arrayWithArray:self.navigationController.viewControllers];if (tempMarr.count &amp;gt; 0) &amp;#123;        [temp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS 小技巧 ---- 方法总结">
 <meta property="og:url" content="http://yoursite.com/2018/03/15/blog6/index.html">
 <meta property="og:site_name" content="拾忆的技术博客">
-<meta property="og:description" content="iOS中一些不常用方法总结：1. 删除navigationController中的某个VC12345678NSMutableArray *tempMarr = [NSMutableArray arrayWithArray:self.navigationController.viewControllers];        if (tempMarr.count &amp;gt; 0) &amp;#123;">
+<meta property="og:description" content="iOS中一些不常用方法总结：1. 删除navigationController中的某个VC12345678NSMutableArray *tempMarr = [NSMutableArray arrayWithArray:self.navigationController.viewControllers];if (tempMarr.count &amp;gt; 0) &amp;#123;        [temp">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-15T08:04:38.000Z">
+<meta property="og:updated_time" content="2018-03-15T08:11:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS 小技巧 ---- 方法总结">
-<meta name="twitter:description" content="iOS中一些不常用方法总结：1. 删除navigationController中的某个VC12345678NSMutableArray *tempMarr = [NSMutableArray arrayWithArray:self.navigationController.viewControllers];        if (tempMarr.count &amp;gt; 0) &amp;#123;">
+<meta name="twitter:description" content="iOS中一些不常用方法总结：1. 删除navigationController中的某个VC12345678NSMutableArray *tempMarr = [NSMutableArray arrayWithArray:self.navigationController.viewControllers];if (tempMarr.count &amp;gt; 0) &amp;#123;        [temp">
 
 
 
@@ -434,7 +434,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  49 字
+                  88 字
                 </span>
               
 
@@ -471,7 +471,8 @@
       
 
       
-        <h2 id="iOS中一些不常用方法总结："><a href="#iOS中一些不常用方法总结：" class="headerlink" title="iOS中一些不常用方法总结："></a>iOS中一些不常用方法总结：</h2><h3 id="1-删除navigationController中的某个VC"><a href="#1-删除navigationController中的某个VC" class="headerlink" title="1. 删除navigationController中的某个VC"></a>1. 删除navigationController中的某个VC</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSMutableArray</span> *tempMarr = [<span class="built_in">NSMutableArray</span> arrayWithArray:<span class="keyword">self</span>.navigationController.viewControllers];</span><br><span class="line">        <span class="keyword">if</span> (tempMarr.count &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            </span><br><span class="line">            [tempMarr removeObjectAtIndex:tempMarr.count<span class="number">-2</span>];</span><br><span class="line">            </span><br><span class="line">            [<span class="keyword">self</span>.navigationController setViewControllers:tempMarr animated:<span class="literal">NO</span>];</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="iOS中一些不常用方法总结："><a href="#iOS中一些不常用方法总结：" class="headerlink" title="iOS中一些不常用方法总结："></a>iOS中一些不常用方法总结：</h2><h3 id="1-删除navigationController中的某个VC"><a href="#1-删除navigationController中的某个VC" class="headerlink" title="1. 删除navigationController中的某个VC"></a>1. 删除navigationController中的某个VC</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSMutableArray</span> *tempMarr = [<span class="built_in">NSMutableArray</span> arrayWithArray:<span class="keyword">self</span>.navigationController.viewControllers];</span><br><span class="line"><span class="keyword">if</span> (tempMarr.count &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    </span><br><span class="line">    [tempMarr removeObjectAtIndex:tempMarr.count<span class="number">-2</span>];</span><br><span class="line">    </span><br><span class="line">    [<span class="keyword">self</span>.navigationController setViewControllers:tempMarr animated:<span class="literal">NO</span>];</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-将字符串中的字母转化为大写或小写"><a href="#2-将字符串中的字母转化为大写或小写" class="headerlink" title="2. 将字符串中的字母转化为大写或小写"></a>2. 将字符串中的字母转化为大写或小写</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">NSString *str = @&quot;123abcABC&quot;;</span><br><span class="line">str = [str uppercaseString]; //转化为大写</span><br><span class="line">str = [str lowercaseString]; //转化为小写</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -748,7 +749,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#iOS中一些不常用方法总结："><span class="nav-number">1.</span> <span class="nav-text">iOS中一些不常用方法总结：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-删除navigationController中的某个VC"><span class="nav-number">1.1.</span> <span class="nav-text">1. 删除navigationController中的某个VC</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#iOS中一些不常用方法总结："><span class="nav-number">1.</span> <span class="nav-text">iOS中一些不常用方法总结：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-删除navigationController中的某个VC"><span class="nav-number">1.1.</span> <span class="nav-text">1. 删除navigationController中的某个VC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-将字符串中的字母转化为大写或小写"><span class="nav-number">1.2.</span> <span class="nav-text">2. 将字符串中的字母转化为大写或小写</span></a></li></ol></li></ol></div>
             
 
           </div>

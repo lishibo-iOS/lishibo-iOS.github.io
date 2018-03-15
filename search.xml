@@ -14,7 +14,7 @@
   <entry>
     <title><![CDATA[iOS 小技巧 ---- 方法总结]]></title>
     <url>%2F2018%2F03%2F15%2Fblog6%2F</url>
-    <content type="text"><![CDATA[iOS中一些不常用方法总结：1. 删除navigationController中的某个VC12345678NSMutableArray *tempMarr = [NSMutableArray arrayWithArray:self.navigationController.viewControllers]; if (tempMarr.count &gt; 0) &#123; [tempMarr removeObjectAtIndex:tempMarr.count-2]; [self.navigationController setViewControllers:tempMarr animated:NO]; &#125;]]></content>
+    <content type="text"><![CDATA[iOS中一些不常用方法总结：1. 删除navigationController中的某个VC12345678NSMutableArray *tempMarr = [NSMutableArray arrayWithArray:self.navigationController.viewControllers];if (tempMarr.count &gt; 0) &#123; [tempMarr removeObjectAtIndex:tempMarr.count-2]; [self.navigationController setViewControllers:tempMarr animated:NO]; &#125; 2. 将字符串中的字母转化为大写或小写123NSString *str = @&quot;123abcABC&quot;;str = [str uppercaseString]; //转化为大写str = [str lowercaseString]; //转化为小写]]></content>
       <categories>
         <category>技术</category>
       </categories>
