@@ -118,10 +118,12 @@
 <meta property="og:site_name" content="拾忆的技术博客">
 <meta property="og:description" content="runtime 简介Runtime 又叫运行时，是一套底层的 C 语言 API，其为 iOS 内部的核心之一，我们平时编写的 OC 代码，底层都是基于它来实现的。比如： [receiver message]; 底层运行时会被编译器转化为： objc_msgSend(receiver, selector) 如果其还有参数比如： [receiver message:(id)arg...]; 底层运行时">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-16T05:55:56.000Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog8pic/12.png">
+<meta property="og:updated_time" content="2018-03-16T07:20:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS runtime 总结（一）---- 基础成员">
 <meta name="twitter:description" content="runtime 简介Runtime 又叫运行时，是一套底层的 C 语言 API，其为 iOS 内部的核心之一，我们平时编写的 OC 代码，底层都是基于它来实现的。比如： [receiver message]; 底层运行时会被编译器转化为： objc_msgSend(receiver, selector) 如果其还有参数比如： [receiver message:(id)arg...]; 底层运行时">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog8pic/12.png">
 
 
 
@@ -435,7 +437,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,041 字
+                  2,063 字
                 </span>
               
 
@@ -561,6 +563,8 @@
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> objc_method *Method;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> objc_method &#123;</span><br><span class="line"></span><br><span class="line">    SEL method_name                 OBJC2_UNAVAILABLE;  <span class="comment">// 方法名</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">char</span> *method_types                  OBJC2_UNAVAILABLE;</span><br><span class="line"></span><br><span class="line">    IMP method_imp                      OBJC2_UNAVAILABLE;  <span class="comment">// 方法实现</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="10-Cache"><a href="#10-Cache" class="headerlink" title="10. Cache"></a>10. Cache</h3><p>Cache主要用来缓存。Cache其实就是一个存储Method的链表，主要是为了优化方法调用的性能。当调用方法时，优先在Cache查找，如果没有找到，再到methodLists查找。</p>
 <h3 id="11-Ivar"><a href="#11-Ivar" class="headerlink" title="11. Ivar"></a>11. Ivar</h3><p>Ivar表示类中的实例变量。Ivar其实就是一个指向objc_ivar结构体指针，它包含了变量名(ivar_name)、变量类型(ivar_type)等信息。</p>
+<p>可以根据下面的这个例子，更好的理解class之间的关系：</p>
+<p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog8pic/12.png" alt="picture12"></p>
 
       
     </div>
@@ -746,7 +750,7 @@ var jiathis_config={
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -892,7 +896,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共22.3k字</span>
+  <span class="post-count">博客全站共23.8k字</span>
 </div>
         
 
