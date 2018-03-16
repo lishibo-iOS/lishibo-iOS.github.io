@@ -119,7 +119,7 @@
 <meta property="og:description" content="runtime 简介Runtime 又叫运行时，是一套底层的 C 语言 API，其为 iOS 内部的核心之一，我们平时编写的 OC 代码，底层都是基于它来实现的。比如： [receiver message]; 底层运行时会被编译器转化为： objc_msgSend(receiver, selector) 如果其还有参数比如： [receiver message:(id)arg...]; 底层运行时">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog8pic/12.png">
-<meta property="og:updated_time" content="2018-03-16T07:20:31.000Z">
+<meta property="og:updated_time" content="2018-03-16T07:25:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS runtime 总结（一）---- 基础成员">
 <meta name="twitter:description" content="runtime 简介Runtime 又叫运行时，是一套底层的 C 语言 API，其为 iOS 内部的核心之一，我们平时编写的 OC 代码，底层都是基于它来实现的。比如： [receiver message]; 底层运行时会被编译器转化为： objc_msgSend(receiver, selector) 如果其还有参数比如： [receiver message:(id)arg...]; 底层运行时">
@@ -437,7 +437,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,063 字
+                  2,091 字
                 </span>
               
 
@@ -565,6 +565,9 @@
 <h3 id="11-Ivar"><a href="#11-Ivar" class="headerlink" title="11. Ivar"></a>11. Ivar</h3><p>Ivar表示类中的实例变量。Ivar其实就是一个指向objc_ivar结构体指针，它包含了变量名(ivar_name)、变量类型(ivar_type)等信息。</p>
 <p>可以根据下面的这个例子，更好的理解class之间的关系：</p>
 <p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog8pic/12.png" alt="picture12"></p>
+<blockquote>
+<p>注：关于“v@:”写法可参考<a href="http://www.it610.com/article/4089444.htm" target="_blank" rel="noopener">iOS学习之Objective-C 2.0 运行时系统编程-8类型编码</a></p>
+</blockquote>
 
       
     </div>
