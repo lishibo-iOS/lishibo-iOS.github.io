@@ -110,18 +110,24 @@
 
 
 
-<meta name="description" content="人生如棋，落子无悔">
+<meta name="description" content="获取对象所有属性名以创建一个Person类为例，进行示例，通过 class_copyPropertyList 方法获取所有的属性名称  创建个Person类     获取类的所有属性名放到数组中    测试一下结果    打印结果： 2018-03-16 10:56:45.165053+0800 runtimeDemo1[26762:7882820] classSize = 482018-03-1">
 <meta name="keywords" content="runtime">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS runtime 总结（三）---- 方法调用示例">
 <meta property="og:url" content="http://yoursite.com/2018/03/16/blog8/index.html">
 <meta property="og:site_name" content="拾忆的技术博客">
-<meta property="og:description" content="人生如棋，落子无悔">
+<meta property="og:description" content="获取对象所有属性名以创建一个Person类为例，进行示例，通过 class_copyPropertyList 方法获取所有的属性名称  创建个Person类     获取类的所有属性名放到数组中    测试一下结果    打印结果： 2018-03-16 10:56:45.165053+0800 runtimeDemo1[26762:7882820] classSize = 482018-03-1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-16T02:19:57.000Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog8pic/1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog8pic/2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog8pic/3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog8pic/4.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog8pic/5.png">
+<meta property="og:updated_time" content="2018-03-16T03:41:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS runtime 总结（三）---- 方法调用示例">
-<meta name="twitter:description" content="人生如棋，落子无悔">
+<meta name="twitter:description" content="获取对象所有属性名以创建一个Person类为例，进行示例，通过 class_copyPropertyList 方法获取所有的属性名称  创建个Person类     获取类的所有属性名放到数组中    测试一下结果    打印结果： 2018-03-16 10:56:45.165053+0800 runtimeDemo1[26762:7882820] classSize = 482018-03-1">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog8pic/1.png">
 
 
 
@@ -435,7 +441,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0 字
+                  372 字
                 </span>
               
 
@@ -451,7 +457,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -472,7 +478,38 @@
       
 
       
-        
+        <h2 id="获取对象所有属性名"><a href="#获取对象所有属性名" class="headerlink" title="获取对象所有属性名"></a>获取对象所有属性名</h2><p>以创建一个Person类为例，进行示例，通过 <code>class_copyPropertyList</code> 方法获取所有的属性名称</p>
+<blockquote>
+<p>创建个Person类 </p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog8pic/1.png" alt="picture1"></p>
+<blockquote>
+<p>获取类的所有属性名放到数组中</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog8pic/2.png" alt="picture2"></p>
+<blockquote>
+<p>测试一下结果</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog8pic/3.png" alt="picture3"></p>
+<blockquote>
+<p>打印结果：</p>
+<p>2018-03-16 10:56:45.165053+0800 runtimeDemo1[26762:7882820] classSize = 48<br>2018-03-16 10:56:45.165662+0800 runtimeDemo1[26762:7882820] propertyName == name<br>2018-03-16 10:56:45.165716+0800 runtimeDemo1[26762:7882820] propertyName == array<br>2018-03-16 10:56:45.165760+0800 runtimeDemo1[26762:7882820] propertyName == age<br>2018-03-16 10:56:45.165802+0800 runtimeDemo1[26762:7882820] propertyName == sex</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>注意：上面提到的 <code>objc_property_t</code> 是一个结构体指针 <code>objc_property *</code>，因此我们声明的 <code>properties</code> 就是二维指针。所以在使用完毕以后，一定要释放内存，否则会造成内存泄露。并且由于runtime使用的是C语言的API，所以我们也需要使用C语言释放内存的方法：<code>free</code>。</p>
+</blockquote>
+<h2 id="获取对象的所有属性名和属性值"><a href="#获取对象的所有属性名和属性值" class="headerlink" title="获取对象的所有属性名和属性值"></a>获取对象的所有属性名和属性值</h2><p>对于获取对象的所有属性名，在上面的-allProperties方法已经可以拿到了，但是并没有处理获取属性值，下面的方法就是可以获取属性名和属性值，将属性名作为key，属性值作为value</p>
+<p>获取类的所有属性名和属性值放到字典中</p>
+<p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog8pic/4.png" alt="picture4"></p>
+<p>测试一下：</p>
+<p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog8pic/5.png" alt="picture5"></p>
+<blockquote>
+<p>打印结果：</p>
+<p>2018-03-16 11:29:35.840436+0800 runtimeDemo1[26811:7896171] propertyName == name == propertyValue: John<br>2018-03-16 11:29:35.841046+0800 runtimeDemo1[26811:7896171] propertyName == age == propertyValue: 8<br>2018-03-16 11:29:35.841134+0800 runtimeDemo1[26811:7896171] propertyName == sex == propertyValue: 0</p>
+</blockquote>
+<hr>
+
       
     </div>
     
@@ -624,8 +661,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -733,6 +779,22 @@ var jiathis_config={
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#获取对象所有属性名"><span class="nav-number">1.</span> <span class="nav-text">获取对象所有属性名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取对象的所有属性名和属性值"><span class="nav-number">2.</span> <span class="nav-text">获取对象的所有属性名和属性值</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -774,7 +836,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共20.9k字</span>
+  <span class="post-count">博客全站共21.6k字</span>
 </div>
         
 

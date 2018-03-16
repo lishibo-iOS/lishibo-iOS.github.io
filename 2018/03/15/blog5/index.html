@@ -118,7 +118,7 @@
 <meta property="og:site_name" content="拾忆的技术博客">
 <meta property="og:description" content="runtime 简介Runtime 又叫运行时，是一套底层的 C 语言 API，其为 iOS 内部的核心之一，我们平时编写的 OC 代码，底层都是基于它来实现的。比如： [receiver message]; 底层运行时会被编译器转化为： objc_msgSend(receiver, selector) 如果其还有参数比如： [receiver message:(id)arg...]; 底层运行时">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-16T02:18:33.000Z">
+<meta property="og:updated_time" content="2018-03-16T02:32:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS runtime 总结（一）---- 基础成员">
 <meta name="twitter:description" content="runtime 简介Runtime 又叫运行时，是一套底层的 C 语言 API，其为 iOS 内部的核心之一，我们平时编写的 OC 代码，底层都是基于它来实现的。比如： [receiver message]; 底层运行时会被编译器转化为： objc_msgSend(receiver, selector) 如果其还有参数比如： [receiver message:(id)arg...]; 底层运行时">
@@ -435,7 +435,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,971 字
+                  2,041 字
                 </span>
               
 
@@ -451,7 +451,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7 分钟
+                  8 分钟
                 </span>
               
             </div>
@@ -530,6 +530,8 @@
 <li>如果找不到则会通过class的super_class指针找到父类的类对象结构体，然后从methodLists中查找该方法</li>
 <li>如果仍然找不到，则继续通过super_class向上一级父类结构体中查找，直至根class</li>
 <li>最后响应该方法，最后把该方法添加到cache列表中，以后再调用该方法，直接从cache中取出相应的方法调用</li>
+<li>如果一直到根类还没有找到，转向拦截调用</li>
+<li>如果没有重写拦截调用的方法，程序报错</li>
 </ul>
 </li>
 <li><p><strong>调用类方法：</strong> </p>
@@ -538,10 +540,12 @@
 <li>如果找不到则会通过metaclass的super_class指针找到父类的metaclass对象结构体，然后从methodLists中查找该方法</li>
 <li>如果仍然找不到，则继续通过super_class向上一级父类结构体中查找，直至根metaclass</li>
 <li>最后响应该方法，最后把该方法添加到cache列表中，以后再调用该方法，直接从cache中取出相应的方法调用</li>
+<li>如果一直到根类还没有找到，转向拦截调用</li>
+<li>如果没有重写拦截调用的方法，程序报错<h3 id="6-super"><a href="#6-super" class="headerlink" title="6.super"></a>6.super</h3></li>
 </ul>
 </li>
 </ul>
-<h3 id="6-super"><a href="#6-super" class="headerlink" title="6.super"></a>6.super</h3><p>super与self不同，self是类的一个隐藏参数，每个方法的实现的第一个参数即为self。而super并不是隐藏参数，它实际上只是一个”编译器标示符”，它负责告诉编译器，当调用viewDidLoad方法时，去调用父类的方法，而不是本类中的方法。而它实际上与self指向的是相同的消息接收者。<br>super的定义：</p>
+<p>super与self不同，self是类的一个隐藏参数，每个方法的实现的第一个参数即为self。而super并不是隐藏参数，它实际上只是一个”编译器标示符”，它负责告诉编译器，当调用viewDidLoad方法时，去调用父类的方法，而不是本类中的方法。而它实际上与self指向的是相同的消息接收者。<br>super的定义：</p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> objc_super &#123;</span><br><span class="line">     <span class="keyword">id</span> receiver;<span class="comment">//即消息的实际接收者</span></span><br><span class="line">     Class superClass;<span class="comment">//指针当前类的父类</span></span><br><span class="line"> &#125;;</span><br></pre></td></tr></table></figure>
 <p>例证：</p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)viewDidLoad &#123;</span><br><span class="line">    [<span class="keyword">super</span> viewDidLoad];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"self:%@ super:%@"</span>, <span class="keyword">self</span>, <span class="keyword">super</span>.class);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -888,7 +892,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共20.9k字</span>
+  <span class="post-count">博客全站共21.6k字</span>
 </div>
         
 
