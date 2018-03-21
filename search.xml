@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[iOS runtime 总结（六）---- 使用场景]]></title>
     <url>%2F2018%2F03%2F21%2Fblog11%2F</url>
-    <content type="text"><![CDATA[利用KVC进行赋值实现json转model原理描述：用runtime提供的函数遍历Model自身所有属性，如果属性在json中有对应的值，则将其赋值。核心方法：在NSObject的分类中添加方法 一键序列化原理描述：用runtime提供的函数遍历Model自身所有属性，并对属性进行encode和decode操作。核心方法：在Model的基类中重写方法： 访问私有变量我们知道，OC中没有真正意义上的私有变量和方法，要让成员变量私有，要放在m文件中声明，不对外暴露。如果我们知道这个成员变量的名称，可以通过runtime获取成员变量，再通过getIvar来获取它的值。方法： 修改私有变量的值 给分类添加公共属性这是最常用的一个模式，通常我们会在类声明里面添加属性，但是出于某些需求（如前言描述的情况），我们需要在分类里添加一个或多个属性的话，编译器就会报错，这个问题的解决方案就是使用runtime的关联对象 这样就可以使用这个属性了 ##「方法替换」常规写法 上边 demo 中写了一大堆 runtime 的 api 在代码里，即不好阅读，也不便于维护。 这里有现成的方案：一个基于 swizzling method 的开源框架 Aspects 。]]></content>
+    <content type="text"><![CDATA[利用KVC进行赋值实现json转model原理描述：用runtime提供的函数遍历Model自身所有属性，如果属性在json中有对应的值，则将其赋值。核心方法：在NSObject的分类中添加方法 一键序列化原理描述：用runtime提供的函数遍历Model自身所有属性，并对属性进行encode和decode操作。核心方法：在Model的基类中重写方法： 访问私有变量我们知道，OC中没有真正意义上的私有变量和方法，要让成员变量私有，要放在m文件中声明，不对外暴露。如果我们知道这个成员变量的名称，可以通过runtime获取成员变量，再通过getIvar来获取它的值。方法： 修改私有变量的值 给分类添加公共属性这是最常用的一个模式，通常我们会在类声明里面添加属性，但是出于某些需求（如前言描述的情况），我们需要在分类里添加一个或多个属性的话，编译器就会报错，这个问题的解决方案就是使用runtime的关联对象 这样就可以使用这个属性了 「方法替换」常规写法 上边 demo 中写了一大堆 runtime 的 api 在代码里，即不好阅读，也不便于维护。 这里有现成的方案：一个基于 swizzling method 的开源框架 Aspects 。]]></content>
       <categories>
         <category>技术</category>
       </categories>
@@ -117,9 +117,9 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>github</tag>
         <tag>hexo</tag>
         <tag>next</tag>
+        <tag>github</tag>
       </tags>
   </entry>
 </search>

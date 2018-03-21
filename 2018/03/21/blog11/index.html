@@ -128,7 +128,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/6.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/7.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/9.png">
-<meta property="og:updated_time" content="2018-03-21T07:33:47.000Z">
+<meta property="og:updated_time" content="2018-03-21T09:34:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS runtime 总结（六）---- 使用场景">
 <meta name="twitter:description" content="利用KVC进行赋值实现json转model原理描述：用runtime提供的函数遍历Model自身所有属性，如果属性在json中有对应的值，则将其赋值。核心方法：在NSObject的分类中添加方法  一键序列化原理描述：用runtime提供的函数遍历Model自身所有属性，并对属性进行encode和decode操作。核心方法：在Model的基类中重写方法：  访问私有变量我们知道，OC中没有真正意义">
@@ -497,8 +497,7 @@
 <p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/6.png" alt="picture6"></p>
 <p>这样就可以使用这个属性了</p>
 <p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/7.png" alt="picture7"></p>
-<p>##「方法替换」常规写法</p>
-<p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/9.png" alt="picture9"></p>
+<h2 id="「方法替换」常规写法"><a href="#「方法替换」常规写法" class="headerlink" title="「方法替换」常规写法"></a>「方法替换」常规写法</h2><p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/9.png" alt="picture9"></p>
 <p>上边 demo 中写了一大堆 runtime 的 api 在代码里，即不好阅读，也不便于维护。</p>
 <blockquote>
 <p>这里有现成的方案：一个基于 swizzling method 的开源框架 <a href="https://github.com/steipete/Aspects" target="_blank" rel="noopener">Aspects</a> 。</p>
@@ -782,7 +781,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#利用KVC进行赋值实现json转model"><span class="nav-number">1.</span> <span class="nav-text">利用KVC进行赋值实现json转model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一键序列化"><span class="nav-number">2.</span> <span class="nav-text">一键序列化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问私有变量"><span class="nav-number">3.</span> <span class="nav-text">访问私有变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改私有变量的值"><span class="nav-number">4.</span> <span class="nav-text">修改私有变量的值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#给分类添加公共属性"><span class="nav-number">5.</span> <span class="nav-text">给分类添加公共属性</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#利用KVC进行赋值实现json转model"><span class="nav-number">1.</span> <span class="nav-text">利用KVC进行赋值实现json转model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一键序列化"><span class="nav-number">2.</span> <span class="nav-text">一键序列化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问私有变量"><span class="nav-number">3.</span> <span class="nav-text">访问私有变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改私有变量的值"><span class="nav-number">4.</span> <span class="nav-text">修改私有变量的值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#给分类添加公共属性"><span class="nav-number">5.</span> <span class="nav-text">给分类添加公共属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#「方法替换」常规写法"><span class="nav-number">6.</span> <span class="nav-text">「方法替换」常规写法</span></a></li></ol></div>
             
 
           </div>
