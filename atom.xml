@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-16T08:43:07.000Z</updated>
+  <updated>2018-03-21T07:05:04.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,9 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>iOS runtime 总结（六）---- 使用场景</title>
+    <link href="http://yoursite.com/2018/03/21/blog11/"/>
+    <id>http://yoursite.com/2018/03/21/blog11/</id>
+    <published>2018-03-21T02:49:48.000Z</published>
+    <updated>2018-03-21T07:05:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="利用KVC进行赋值实现json转model"><a href="#利用KVC进行赋值实现json转model" class="headerlink" title="利用KVC进行赋值实现json转model"></a>利用KVC进行赋值实现json转model</h2><p>原理描述：用runtime提供的函数遍历Model自身所有属性，如果属性在json中有对应的值，则将其赋值。<br>核心方法：在NSObject的分类中添加方法</p><p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/1.png" alt="picture1"></p><h2 id="一键序列化"><a href="#一键序列化" class="headerlink" title="一键序列化"></a>一键序列化</h2><p>原理描述：用runtime提供的函数遍历Model自身所有属性，并对属性进行encode和decode操作。<br>核心方法：在Model的基类中重写方法：</p><p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/2.png" alt="picture2"></p><h2 id="访问私有变量"><a href="#访问私有变量" class="headerlink" title="访问私有变量"></a>访问私有变量</h2><p>我们知道，OC中没有真正意义上的私有变量和方法，要让成员变量私有，要放在m文件中声明，不对外暴露。如果我们知道这个成员变量的名称，可以通过runtime获取成员变量，再通过getIvar来获取它的值。方法：</p><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Ivar ivar = class_getInstanceVariable([Model <span class="keyword">class</span>], <span class="string">"_content"</span>);</span><br><span class="line"><span class="built_in">NSString</span> * str1 = object_getIvar(model, ivar);</span><br></pre></td></tr></table></figure><h2 id="给分类添加公共属性"><a href="#给分类添加公共属性" class="headerlink" title="给分类添加公共属性"></a>给分类添加公共属性</h2><p>这是最常用的一个模式，通常我们会在类声明里面添加属性，但是出于某些需求（如前言描述的情况），我们需要在分类里添加一个或多个属性的话，编译器就会报错，这个问题的解决方案就是使用runtime的关联对象</p><p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/5.png" alt="picture5"></p><p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/6.png" alt="picture6"></p><p>这样就可以使用这个属性了</p><p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/7.png" alt="picture7"></p><p>##「方法替换」常规写法</p><p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/9.png" alt="picture9"></p><p>上边 demo 中写了一大堆 runtime 的 api 在代码里，即不好阅读，也不便于维护。</p><blockquote><p>这里有现成的方案：一个基于 swizzling method 的开源框架 <a href="https://github.com/steipete/Aspects" target="_blank" rel="noopener">Aspects</a> 。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;利用KVC进行赋值实现json转model&quot;&gt;&lt;a href=&quot;#利用KVC进行赋值实现json转model&quot; class=&quot;headerlink&quot; title=&quot;利用KVC进行赋值实现json转model&quot;&gt;&lt;/a&gt;利用KVC进行赋值实现json转model&lt;/
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="runtime" scheme="http://yoursite.com/tags/runtime/"/>
+    
+  </entry>
+  
+  <entry>
     <title>iOS runtime 总结（五）---- 消息转发</title>
-    <link href="http://yoursite.com/2018/03/16/blog10/"/>
-    <id>http://yoursite.com/2018/03/16/blog10/</id>
+    <link href="http://yoursite.com/2018/03/16/iOS%20runtime%20%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%94%EF%BC%89----%20%E6%B6%88%E6%81%AF%E8%BD%AC%E5%8F%91/"/>
+    <id>http://yoursite.com/2018/03/16/iOS runtime 总结（五）---- 消息转发/</id>
     <published>2018-03-16T08:01:00.000Z</published>
     <updated>2018-03-16T08:43:07.000Z</updated>
     
@@ -44,8 +69,8 @@
   
   <entry>
     <title>iOS runtime 总结（四）---- Associative介绍及使用</title>
-    <link href="http://yoursite.com/2018/03/16/blog9/"/>
-    <id>http://yoursite.com/2018/03/16/blog9/</id>
+    <link href="http://yoursite.com/2018/03/16/iOS%20runtime%20%E6%80%BB%E7%BB%93%EF%BC%88%E5%9B%9B%EF%BC%89----%20Associative%E4%BB%8B%E7%BB%8D%E5%8F%8A%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2018/03/16/iOS runtime 总结（四）---- Associative介绍及使用/</id>
     <published>2018-03-16T06:10:57.000Z</published>
     <updated>2018-03-16T06:57:45.000Z</updated>
     
@@ -70,8 +95,8 @@
   
   <entry>
     <title>iOS runtime 总结（三）---- 方法调用示例</title>
-    <link href="http://yoursite.com/2018/03/16/blog8/"/>
-    <id>http://yoursite.com/2018/03/16/blog8/</id>
+    <link href="http://yoursite.com/2018/03/16/iOS%20runtime%20%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%89%EF%BC%89----%20%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8%E7%A4%BA%E4%BE%8B/"/>
+    <id>http://yoursite.com/2018/03/16/iOS runtime 总结（三）---- 方法调用示例/</id>
     <published>2018-03-16T02:19:10.000Z</published>
     <updated>2018-03-16T06:09:44.000Z</updated>
     
@@ -95,8 +120,8 @@
   
   <entry>
     <title>iOS runtime 总结（二）---- 主要函数</title>
-    <link href="http://yoursite.com/2018/03/16/blog7/"/>
-    <id>http://yoursite.com/2018/03/16/blog7/</id>
+    <link href="http://yoursite.com/2018/03/16/iOS%20runtime%20%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%8C%EF%BC%89----%20%E4%B8%BB%E8%A6%81%E5%87%BD%E6%95%B0/"/>
+    <id>http://yoursite.com/2018/03/16/iOS runtime 总结（二）---- 主要函数/</id>
     <published>2018-03-16T01:36:50.000Z</published>
     <updated>2018-03-16T09:10:17.000Z</updated>
     
@@ -126,8 +151,8 @@
   
   <entry>
     <title>iOS runtime 总结（一）---- 基础成员</title>
-    <link href="http://yoursite.com/2018/03/15/blog5/"/>
-    <id>http://yoursite.com/2018/03/15/blog5/</id>
+    <link href="http://yoursite.com/2018/03/15/iOS%20runtime%20%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89----%20%E5%9F%BA%E7%A1%80%E6%88%90%E5%91%98/"/>
+    <id>http://yoursite.com/2018/03/15/iOS runtime 总结（一）---- 基础成员/</id>
     <published>2018-03-15T05:52:13.000Z</published>
     <updated>2018-03-16T07:25:51.000Z</updated>
     
@@ -151,8 +176,8 @@
   
   <entry>
     <title>iOS 小技巧 ---- 方法总结</title>
-    <link href="http://yoursite.com/2018/03/15/blog6/"/>
-    <id>http://yoursite.com/2018/03/15/blog6/</id>
+    <link href="http://yoursite.com/2018/03/15/iOS%20%E5%B0%8F%E6%8A%80%E5%B7%A7%20----%20%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2018/03/15/iOS 小技巧 ---- 方法总结/</id>
     <published>2018-03-15T04:00:00.000Z</published>
     <updated>2018-03-19T08:36:38.000Z</updated>
     
@@ -174,8 +199,8 @@
   
   <entry>
     <title>iOS多线程 ---- GCD使用总结</title>
-    <link href="http://yoursite.com/2018/03/14/blog4/"/>
-    <id>http://yoursite.com/2018/03/14/blog4/</id>
+    <link href="http://yoursite.com/2018/03/14/iOS%E5%A4%9A%E7%BA%BF%E7%A8%8B%20----%20GCD%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2018/03/14/iOS多线程 ---- GCD使用总结/</id>
     <published>2018-03-14T01:21:34.000Z</published>
     <updated>2018-03-15T06:56:31.000Z</updated>
     
@@ -202,8 +227,8 @@
   
   <entry>
     <title>RSS订阅工具</title>
-    <link href="http://yoursite.com/2018/03/07/blog3/"/>
-    <id>http://yoursite.com/2018/03/07/blog3/</id>
+    <link href="http://yoursite.com/2018/03/07/RSS%E8%AE%A2%E9%98%85%E5%B7%A5%E5%85%B7/"/>
+    <id>http://yoursite.com/2018/03/07/RSS订阅工具/</id>
     <published>2018-03-07T07:18:46.000Z</published>
     <updated>2018-03-07T07:29:08.000Z</updated>
     
@@ -227,8 +252,8 @@
   
   <entry>
     <title>博客搭建（二）-- 使用next主题配置博客基本信息</title>
-    <link href="http://yoursite.com/2018/03/02/blog2/"/>
-    <id>http://yoursite.com/2018/03/02/blog2/</id>
+    <link href="http://yoursite.com/2018/03/02/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88%E4%BA%8C%EF%BC%89--%20%E4%BD%BF%E7%94%A8next%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E5%8D%9A%E5%AE%A2%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF/"/>
+    <id>http://yoursite.com/2018/03/02/博客搭建（二）-- 使用next主题配置博客基本信息/</id>
     <published>2018-03-02T01:36:14.000Z</published>
     <updated>2018-03-16T09:27:03.000Z</updated>
     
@@ -257,8 +282,8 @@
   
   <entry>
     <title>博客搭建（一）-- 使用Hexo&amp;GitHub免费快速搭建</title>
-    <link href="http://yoursite.com/2018/03/01/blog1/"/>
-    <id>http://yoursite.com/2018/03/01/blog1/</id>
+    <link href="http://yoursite.com/2018/03/01/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%EF%BC%88%E4%B8%80%EF%BC%89--%20%E4%BD%BF%E7%94%A8Hexo&amp;GitHub%E5%85%8D%E8%B4%B9%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA/"/>
+    <id>http://yoursite.com/2018/03/01/博客搭建（一）-- 使用Hexo&amp;GitHub免费快速搭建/</id>
     <published>2018-03-01T02:18:46.000Z</published>
     <updated>2018-03-08T02:10:00.000Z</updated>
     
