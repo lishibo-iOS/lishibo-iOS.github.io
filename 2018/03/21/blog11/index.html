@@ -120,11 +120,15 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/1.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/13.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/12.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/10.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/11.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/5.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/6.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/7.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/9.png">
-<meta property="og:updated_time" content="2018-03-21T07:05:04.000Z">
+<meta property="og:updated_time" content="2018-03-21T07:20:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS runtime 总结（六）---- 使用场景">
 <meta name="twitter:description" content="利用KVC进行赋值实现json转model原理描述：用runtime提供的函数遍历Model自身所有属性，如果属性在json中有对应的值，则将其赋值。核心方法：在NSObject的分类中添加方法  一键序列化原理描述：用runtime提供的函数遍历Model自身所有属性，并对属性进行encode和decode操作。核心方法：在Model的基类中重写方法：  访问私有变量我们知道，OC中没有真正意义">
@@ -442,7 +446,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  370 字
+                  365 字
                 </span>
               
 
@@ -484,7 +488,10 @@
 <h2 id="一键序列化"><a href="#一键序列化" class="headerlink" title="一键序列化"></a>一键序列化</h2><p>原理描述：用runtime提供的函数遍历Model自身所有属性，并对属性进行encode和decode操作。<br>核心方法：在Model的基类中重写方法：</p>
 <p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/2.png" alt="picture2"></p>
 <h2 id="访问私有变量"><a href="#访问私有变量" class="headerlink" title="访问私有变量"></a>访问私有变量</h2><p>我们知道，OC中没有真正意义上的私有变量和方法，要让成员变量私有，要放在m文件中声明，不对外暴露。如果我们知道这个成员变量的名称，可以通过runtime获取成员变量，再通过getIvar来获取它的值。方法：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Ivar ivar = class_getInstanceVariable([Model <span class="keyword">class</span>], <span class="string">"_content"</span>);</span><br><span class="line"><span class="built_in">NSString</span> * str1 = object_getIvar(model, ivar);</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/13.png" alt="picture13"></p>
+<p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/12.png" alt="picture12"></p>
+<h2 id="修改私有变量的值"><a href="#修改私有变量的值" class="headerlink" title="修改私有变量的值"></a>修改私有变量的值</h2><p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/10.png" alt="picture10"></p>
+<p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/11.png" alt="picture11"></p>
 <h2 id="给分类添加公共属性"><a href="#给分类添加公共属性" class="headerlink" title="给分类添加公共属性"></a>给分类添加公共属性</h2><p>这是最常用的一个模式，通常我们会在类声明里面添加属性，但是出于某些需求（如前言描述的情况），我们需要在分类里添加一个或多个属性的话，编译器就会报错，这个问题的解决方案就是使用runtime的关联对象</p>
 <p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/5.png" alt="picture5"></p>
 <p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/6.png" alt="picture6"></p>
@@ -775,7 +782,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#利用KVC进行赋值实现json转model"><span class="nav-number">1.</span> <span class="nav-text">利用KVC进行赋值实现json转model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一键序列化"><span class="nav-number">2.</span> <span class="nav-text">一键序列化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问私有变量"><span class="nav-number">3.</span> <span class="nav-text">访问私有变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#给分类添加公共属性"><span class="nav-number">4.</span> <span class="nav-text">给分类添加公共属性</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#利用KVC进行赋值实现json转model"><span class="nav-number">1.</span> <span class="nav-text">利用KVC进行赋值实现json转model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一键序列化"><span class="nav-number">2.</span> <span class="nav-text">一键序列化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问私有变量"><span class="nav-number">3.</span> <span class="nav-text">访问私有变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改私有变量的值"><span class="nav-number">4.</span> <span class="nav-text">修改私有变量的值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#给分类添加公共属性"><span class="nav-number">5.</span> <span class="nav-text">给分类添加公共属性</span></a></li></ol></div>
             
 
           </div>
