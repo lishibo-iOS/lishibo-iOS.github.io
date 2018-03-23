@@ -97,7 +97,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="runtime," />
 
 
 
@@ -110,16 +110,29 @@
 
 
 
-<meta name="description" content="人生如棋，落子无悔">
-<meta property="og:type" content="website">
-<meta property="og:title" content="拾忆的技术博客">
-<meta property="og:url" content="http://yoursite.com/tags/多线程/index.html">
+<meta name="description" content="利用KVC进行赋值实现json转model原理描述：用runtime提供的函数遍历Model自身所有属性，如果属性在json中有对应的值，则将其赋值。核心方法：在NSObject的分类中添加方法  一键序列化原理描述：用runtime提供的函数遍历Model自身所有属性，并对属性进行encode和decode操作。核心方法：在Model的基类中重写方法：  访问私有变量我们知道，OC中没有真正意义">
+<meta name="keywords" content="runtime">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS runtime 总结（六）---- 使用场景">
+<meta property="og:url" content="http://yoursite.com/2018/03/21/iOS runtime 总结（六）---- 使用场景/index.html">
 <meta property="og:site_name" content="拾忆的技术博客">
-<meta property="og:description" content="人生如棋，落子无悔">
+<meta property="og:description" content="利用KVC进行赋值实现json转model原理描述：用runtime提供的函数遍历Model自身所有属性，如果属性在json中有对应的值，则将其赋值。核心方法：在NSObject的分类中添加方法  一键序列化原理描述：用runtime提供的函数遍历Model自身所有属性，并对属性进行encode和decode操作。核心方法：在Model的基类中重写方法：  访问私有变量我们知道，OC中没有真正意义">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/13.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/12.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/10.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/11.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/6.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/7.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/9.png">
+<meta property="og:updated_time" content="2018-03-21T09:34:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="拾忆的技术博客">
-<meta name="twitter:description" content="人生如棋，落子无悔">
+<meta name="twitter:title" content="iOS runtime 总结（六）---- 使用场景">
+<meta name="twitter:description" content="利用KVC进行赋值实现json转model原理描述：用runtime提供的函数遍历Model自身所有属性，如果属性在json中有对应的值，则将其赋值。核心方法：在NSObject的分类中添加方法  一键序列化原理描述：用runtime提供的函数遍历Model自身所有属性，并对属性进行encode和decode操作。核心方法：在Model的基类中重写方法：  访问私有变量我们知道，OC中没有真正意义">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/1.png">
 
 
 
@@ -149,13 +162,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/多线程/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/21/iOS runtime 总结（六）---- 使用场景/"/>
 
 
 
 
 
-  <title>标签: 多线程 | 拾忆的技术博客</title>
+  <title>iOS runtime 总结（六）---- 使用场景 | 拾忆的技术博客</title>
   
 
 
@@ -174,7 +187,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <a href="https://github.com/lishibo-iOS" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
@@ -314,54 +327,299 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>多线程<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/21/iOS runtime 总结（六）---- 使用场景/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="拾忆">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="拾忆的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/03/14/iOS多线程 ---- GCD使用总结/" itemprop="url">
-              
-                <span itemprop="name">iOS多线程 ---- GCD使用总结</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">iOS runtime 总结（六）---- 使用场景</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-14T09:21:34+08:00"
-              content="2018-03-14" >
-          03-14
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-21T10:49:48+08:00">
+                2018-03-21
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/21/iOS runtime 总结（六）---- 使用场景/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/03/21/iOS runtime 总结（六）---- 使用场景/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/03/21/iOS runtime 总结（六）---- 使用场景/" class="leancloud_visitors" data-flag-title="iOS runtime 总结（六）---- 使用场景">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  365 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="利用KVC进行赋值实现json转model"><a href="#利用KVC进行赋值实现json转model" class="headerlink" title="利用KVC进行赋值实现json转model"></a>利用KVC进行赋值实现json转model</h2><p>原理描述：用runtime提供的函数遍历Model自身所有属性，如果属性在json中有对应的值，则将其赋值。<br>核心方法：在NSObject的分类中添加方法</p>
+<p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/1.png" alt="picture1"></p>
+<h2 id="一键序列化"><a href="#一键序列化" class="headerlink" title="一键序列化"></a>一键序列化</h2><p>原理描述：用runtime提供的函数遍历Model自身所有属性，并对属性进行encode和decode操作。<br>核心方法：在Model的基类中重写方法：</p>
+<p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/2.png" alt="picture2"></p>
+<h2 id="访问私有变量"><a href="#访问私有变量" class="headerlink" title="访问私有变量"></a>访问私有变量</h2><p>我们知道，OC中没有真正意义上的私有变量和方法，要让成员变量私有，要放在m文件中声明，不对外暴露。如果我们知道这个成员变量的名称，可以通过runtime获取成员变量，再通过getIvar来获取它的值。方法：</p>
+<p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/13.png" alt="picture13"></p>
+<p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/12.png" alt="picture12"></p>
+<h2 id="修改私有变量的值"><a href="#修改私有变量的值" class="headerlink" title="修改私有变量的值"></a>修改私有变量的值</h2><p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/10.png" alt="picture10"></p>
+<p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/11.png" alt="picture11"></p>
+<h2 id="给分类添加公共属性"><a href="#给分类添加公共属性" class="headerlink" title="给分类添加公共属性"></a>给分类添加公共属性</h2><p>这是最常用的一个模式，通常我们会在类声明里面添加属性，但是出于某些需求（如前言描述的情况），我们需要在分类里添加一个或多个属性的话，编译器就会报错，这个问题的解决方案就是使用runtime的关联对象</p>
+<p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/5.png" alt="picture5"></p>
+<p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/6.png" alt="picture6"></p>
+<p>这样就可以使用这个属性了</p>
+<p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/7.png" alt="picture7"></p>
+<h2 id="「方法替换」常规写法"><a href="#「方法替换」常规写法" class="headerlink" title="「方法替换」常规写法"></a>「方法替换」常规写法</h2><p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog11pic/9.png" alt="picture9"></p>
+<p>上边 demo 中写了一大堆 runtime 的 api 在代码里，即不好阅读，也不便于维护。</p>
+<blockquote>
+<p>这里有现成的方案：一个基于 swizzling method 的开源框架 <a href="https://github.com/steipete/Aspects" target="_blank" rel="noopener">Aspects</a> 。</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
 
       
     </div>
 
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    拾忆
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/2018/03/21/iOS runtime 总结（六）---- 使用场景/" title="iOS runtime 总结（六）---- 使用场景">http://yoursite.com/2018/03/21/iOS runtime 总结（六）---- 使用场景/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/runtime/" rel="tag"><i class="fa fa-tag"></i> runtime</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/16/iOS runtime 总结（五）---- 消息转发/" rel="next" title="iOS runtime 总结（五）---- 消息转发">
+                <i class="fa fa-chevron-left"></i> iOS runtime 总结（五）---- 消息转发
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/22/blog12/" rel="prev" title="iOS runtime 总结（七）---- 实际使用">
+                iOS runtime 总结（七）---- 实际使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -369,6 +627,17 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -389,8 +658,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -497,6 +775,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#利用KVC进行赋值实现json转model"><span class="nav-number">1.</span> <span class="nav-text">利用KVC进行赋值实现json转model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一键序列化"><span class="nav-number">2.</span> <span class="nav-text">一键序列化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问私有变量"><span class="nav-number">3.</span> <span class="nav-text">访问私有变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改私有变量的值"><span class="nav-number">4.</span> <span class="nav-text">修改私有变量的值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#给分类添加公共属性"><span class="nav-number">5.</span> <span class="nav-text">给分类添加公共属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#「方法替换」常规写法"><span class="nav-number">6.</span> <span class="nav-text">「方法替换」常规写法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -637,6 +931,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -688,6 +986,30 @@
       </style>
     
 
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'lishibo-iOS',
+            repo: 'lishibo-iOS.github.io',
+            
+            lang: "zh-Hans" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '04cc0fdebb6ab8be5160fcd88ac6dce1f5ec004a',
+            
+                client_id: '284cbe9480e1f1720ad5'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
     
 
 

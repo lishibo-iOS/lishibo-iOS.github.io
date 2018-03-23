@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[iOS runtime 总结（七）---- 实际使用]]></title>
+    <url>%2F2018%2F03%2F22%2Fblog12%2F</url>
+    <content type="text"><![CDATA[引言 这里我以工程中使用到一些runtime相关的代码作为例子，供大家参考和使用 基础准备先给NSObject加个分类，封装下方法交换，方便后面使用 下面总结的方法，大家可自行去尝试下效果 给button增加个防止连续重复点击的时间差在 &quot;UIButton+Swiz.h&quot; 中： 123456789101112#import &lt;UIKit/UIKit.h&gt;@interface UIButton (Swiz)//点击间隔@property (nonatomic, assign) NSTimeInterval timeInterval;//用于设置单个按钮是否需要timeInterval @property (nonatomic, assign) BOOL isIgnore;@end 在 &quot;UIButton+Swiz.m&quot; 中： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172#import "UIButton+Swiz.h"#import "NSObject+Swiz.h"#define defaultInterval 0.3@implementation UIButton (Swiz)+ (void)load &#123; static dispatch_once_t onceToken; dispatch_once(&amp;onceToken, ^&#123; [self methodSwizzlingWithOriginalSelector:@selector(sendAction:to:forEvent:) bySwizzledSelector:@selector(sure_SendAction:to:forEvent:)]; &#125;);&#125;- (void)sure_SendAction:(SEL)action to:(id)target forEvent:(UIEvent *)event &#123; if (self.isIgnore) &#123; //不需要timeInterval 被hook [self sure_SendAction:action to:target forEvent:event]; return; &#125; if ([NSStringFromClass(self.class) isEqualToString:@"UIButton"]) &#123; self.timeInterval = self.timeInterval == 0 ? defaultInterval : self.timeInterval; if (self.isIgnoreEvent) &#123; return; &#125;else if (self.timeInterval &gt; 0) &#123; [self performSelector:@selector(resetState) withObject:nil afterDelay:self.timeInterval]; &#125; &#125; self.isIgnoreEvent = YES; [self sure_SendAction:action to:target forEvent:event]; &#125;- (void)resetState &#123; [self setIsIgnoreEvent:NO];&#125;#pragma mark - runtime动态绑定一个isIgnoreEvent属性- (BOOL)isIgnoreEvent &#123; return [objc_getAssociatedObject(self, _cmd) boolValue];&#125;- (void)setIsIgnoreEvent:(BOOL)isIgnoreEvent &#123; objc_setAssociatedObject(self, @selector(isIgnoreEvent), @(isIgnoreEvent), OBJC_ASSOCIATION_RETAIN_NONATOMIC);&#125;#pragma mark - runtime动态绑定自定义的两个属性- (NSTimeInterval)timeInterval &#123; return [objc_getAssociatedObject(self, _cmd) doubleValue];&#125;- (void)setTimeInterval:(NSTimeInterval)timeInterval &#123; objc_setAssociatedObject(self, @selector(timeInterval), @(timeInterval), OBJC_ASSOCIATION_RETAIN_NONATOMIC);&#125;- (BOOL)isIgnore &#123; //_cmd == @select(isIgnore); 和set方法里一致 return [objc_getAssociatedObject(self, _cmd) boolValue];&#125;- (void)setIsIgnore:(BOOL)isIgnore &#123; // 注意BOOL类型 需要用OBJC_ASSOCIATION_RETAIN_NONATOMIC 不要用错，否则set方法会赋值出错 objc_setAssociatedObject(self, @selector(isIgnore), @(isIgnore), OBJC_ASSOCIATION_RETAIN_NONATOMIC);&#125;@end 给button增加点击范围在 &quot;UIButton+Swiz.h&quot; 中加入： 123//设置超出自身范围的额外点击区域@property (nonatomic, assign) UIEdgeInsets touchAreaInsets; 在 &quot;UIButton+Swiz.m&quot; 中加入： 12345678910111213141516171819- (UIEdgeInsets)touchAreaInsets &#123; return [objc_getAssociatedObject(self, _cmd) UIEdgeInsetsValue];&#125;- (void)setTouchAreaInsets:(UIEdgeInsets)touchAreaInsets &#123; NSValue *value = [NSValue valueWithUIEdgeInsets:touchAreaInsets]; objc_setAssociatedObject(self, @selector(touchAreaInsets), value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);&#125;- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event &#123; UIEdgeInsets touchAreaInsets = self.touchAreaInsets; CGRect bounds = self.bounds; bounds = CGRectMake(bounds.origin.x - touchAreaInsets.left, bounds.origin.y - touchAreaInsets.top, bounds.size.width + touchAreaInsets.left + touchAreaInsets.right, bounds.size.height + touchAreaInsets.top + touchAreaInsets.bottom); return CGRectContainsPoint(bounds, point); &#125;]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>runtime</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[iOS runtime 总结（六）---- 使用场景]]></title>
-    <url>%2F2018%2F03%2F21%2Fblog11%2F</url>
+    <url>%2F2018%2F03%2F21%2FiOS%20runtime%20%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AD%EF%BC%89----%20%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%2F</url>
     <content type="text"><![CDATA[利用KVC进行赋值实现json转model原理描述：用runtime提供的函数遍历Model自身所有属性，如果属性在json中有对应的值，则将其赋值。核心方法：在NSObject的分类中添加方法 一键序列化原理描述：用runtime提供的函数遍历Model自身所有属性，并对属性进行encode和decode操作。核心方法：在Model的基类中重写方法： 访问私有变量我们知道，OC中没有真正意义上的私有变量和方法，要让成员变量私有，要放在m文件中声明，不对外暴露。如果我们知道这个成员变量的名称，可以通过runtime获取成员变量，再通过getIvar来获取它的值。方法： 修改私有变量的值 给分类添加公共属性这是最常用的一个模式，通常我们会在类声明里面添加属性，但是出于某些需求（如前言描述的情况），我们需要在分类里添加一个或多个属性的话，编译器就会报错，这个问题的解决方案就是使用runtime的关联对象 这样就可以使用这个属性了 「方法替换」常规写法 上边 demo 中写了一大堆 runtime 的 api 在代码里，即不好阅读，也不便于维护。 这里有现成的方案：一个基于 swizzling method 的开源框架 Aspects 。]]></content>
       <categories>
         <category>技术</category>
@@ -117,9 +128,9 @@
         <category>技术</category>
       </categories>
       <tags>
+        <tag>github</tag>
         <tag>hexo</tag>
         <tag>next</tag>
-        <tag>github</tag>
       </tags>
   </entry>
 </search>
