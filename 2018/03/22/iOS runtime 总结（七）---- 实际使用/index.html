@@ -97,7 +97,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="runtime," />
 
 
 
@@ -110,17 +110,20 @@
 
 
 
-<meta name="description" content="人生如棋，落子无悔">
-<meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="引言 这里我以工程中使用到一些runtime相关的代码作为例子，供大家参考和使用  基础准备先给NSObject加个分类，封装下方法交换，方便后面使用   下面总结的方法，大家可自行去尝试下效果  给button增加个防止连续重复点击的时间差在 &amp;quot;UIButton+Swiz.h&amp;quot; 中： 123456789101112#import &amp;lt;UIKit/UIKit.h&amp;gt;@i">
+<meta name="keywords" content="runtime">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS runtime 总结（七）---- 实际使用">
+<meta property="og:url" content="http://yoursite.com/2018/03/22/iOS runtime 总结（七）---- 实际使用/index.html">
 <meta property="og:site_name" content="拾忆的技术博客">
-<meta property="og:description" content="人生如棋，落子无悔">
+<meta property="og:description" content="引言 这里我以工程中使用到一些runtime相关的代码作为例子，供大家参考和使用  基础准备先给NSObject加个分类，封装下方法交换，方便后面使用   下面总结的方法，大家可自行去尝试下效果  给button增加个防止连续重复点击的时间差在 &amp;quot;UIButton+Swiz.h&amp;quot; 中： 123456789101112#import &amp;lt;UIKit/UIKit.h&amp;gt;@i">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-28T07:13:18.000Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog12pic/1.png">
+<meta property="og:updated_time" content="2018-03-23T07:30:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签">
-<meta name="twitter:description" content="人生如棋，落子无悔">
+<meta name="twitter:title" content="iOS runtime 总结（七）---- 实际使用">
+<meta name="twitter:description" content="引言 这里我以工程中使用到一些runtime相关的代码作为例子，供大家参考和使用  基础准备先给NSObject加个分类，封装下方法交换，方便后面使用   下面总结的方法，大家可自行去尝试下效果  给button增加个防止连续重复点击的时间差在 &amp;quot;UIButton+Swiz.h&amp;quot; 中： 123456789101112#import &amp;lt;UIKit/UIKit.h&amp;gt;@i">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog12pic/1.png">
 
 
 
@@ -150,13 +153,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/22/iOS runtime 总结（七）---- 实际使用/"/>
 
 
 
 
 
-  <title>标签 | 拾忆的技术博客</title>
+  <title>iOS runtime 总结（七）---- 实际使用 | 拾忆的技术博客</title>
   
 
 
@@ -317,40 +320,294 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/22/iOS runtime 总结（七）---- 实际使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="拾忆">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="拾忆的技术博客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">标签</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 8 个标签
+          <h1 class="post-title" itemprop="name headline">iOS runtime 总结（七）---- 实际使用</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-22T10:50:14+08:00">
+                2018-03-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/22/iOS runtime 总结（七）---- 实际使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/03/22/iOS runtime 总结（七）---- 实际使用/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/03/22/iOS runtime 总结（七）---- 实际使用/" class="leancloud_visitors" data-flag-title="iOS runtime 总结（七）---- 实际使用">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  754 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
             </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/GCD/" style="font-size: 12px; color: #ccc">GCD</a> <a href="/tags/RSS/" style="font-size: 12px; color: #ccc">RSS</a> <a href="/tags/RunLoop/" style="font-size: 12px; color: #ccc">RunLoop</a> <a href="/tags/github/" style="font-size: 12px; color: #ccc">github</a> <a href="/tags/hexo/" style="font-size: 21px; color: #6f6f6f">hexo</a> <a href="/tags/next/" style="font-size: 21px; color: #6f6f6f">next</a> <a href="/tags/runtime/" style="font-size: 30px; color: #111">runtime</a> <a href="/tags/多线程/" style="font-size: 12px; color: #ccc">多线程</a>
-            </div>
-          </div>
-        
-      </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><blockquote>
+<p>这里我以工程中使用到一些runtime相关的代码作为例子，供大家参考和使用</p>
+</blockquote>
+<h2 id="基础准备"><a href="#基础准备" class="headerlink" title="基础准备"></a>基础准备</h2><p>先给NSObject加个分类，封装下方法交换，方便后面使用</p>
+<p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/blog12pic/1.png" alt="pic1"></p>
+<blockquote>
+<p>下面总结的方法，大家可自行去尝试下效果</p>
+</blockquote>
+<h2 id="给button增加个防止连续重复点击的时间差"><a href="#给button增加个防止连续重复点击的时间差" class="headerlink" title="给button增加个防止连续重复点击的时间差"></a>给button增加个防止连续重复点击的时间差</h2><p>在 <code>&quot;UIButton+Swiz.h&quot;</code> 中：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#import <span class="meta-string">&lt;UIKit/UIKit.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">UIButton</span> (<span class="title">Swiz</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//点击间隔</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">NSTimeInterval</span> timeInterval;</span><br><span class="line"></span><br><span class="line"><span class="comment">//用于设置单个按钮是否需要timeInterval </span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">BOOL</span> isIgnore;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+<p>在 <code>&quot;UIButton+Swiz.m&quot;</code> 中：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#import <span class="meta-string">"UIButton+Swiz.h"</span></span></span><br><span class="line"><span class="meta">#import <span class="meta-string">"NSObject+Swiz.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#define defaultInterval 0.3</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">UIButton</span> (<span class="title">Swiz</span>)</span></span><br><span class="line"></span><br><span class="line">+ (<span class="keyword">void</span>)load &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="built_in">dispatch_once_t</span> onceToken;</span><br><span class="line">    <span class="built_in">dispatch_once</span>(&amp;onceToken, ^&#123;</span><br><span class="line">        [<span class="keyword">self</span> methodSwizzlingWithOriginalSelector:<span class="keyword">@selector</span>(sendAction:to:forEvent:) bySwizzledSelector:<span class="keyword">@selector</span>(sure_SendAction:to:forEvent:)];</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)sure_SendAction:(SEL)action to:(<span class="keyword">id</span>)target forEvent:(<span class="built_in">UIEvent</span> *)event &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">self</span>.isIgnore) &#123;</span><br><span class="line">        <span class="comment">//不需要timeInterval 被hook</span></span><br><span class="line">        [<span class="keyword">self</span> sure_SendAction:action to:target forEvent:event];</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> ([<span class="built_in">NSStringFromClass</span>(<span class="keyword">self</span>.class) isEqualToString:<span class="string">@"UIButton"</span>]) &#123;</span><br><span class="line">        <span class="keyword">self</span>.timeInterval = <span class="keyword">self</span>.timeInterval == <span class="number">0</span> ? defaultInterval : <span class="keyword">self</span>.timeInterval;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">self</span>.isIgnoreEvent) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">self</span>.timeInterval &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            [<span class="keyword">self</span> performSelector:<span class="keyword">@selector</span>(resetState) withObject:<span class="literal">nil</span> afterDelay:<span class="keyword">self</span>.timeInterval];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">self</span>.isIgnoreEvent = <span class="literal">YES</span>;</span><br><span class="line">    [<span class="keyword">self</span> sure_SendAction:action to:target forEvent:event];</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)resetState &#123;</span><br><span class="line">    [<span class="keyword">self</span> setIsIgnoreEvent:<span class="literal">NO</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#pragma mark - runtime动态绑定一个isIgnoreEvent属性</span></span><br><span class="line"></span><br><span class="line">- (<span class="built_in">BOOL</span>)isIgnoreEvent &#123;</span><br><span class="line">    <span class="keyword">return</span> [objc_getAssociatedObject(<span class="keyword">self</span>, _cmd) boolValue];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)setIsIgnoreEvent:(<span class="built_in">BOOL</span>)isIgnoreEvent &#123;</span><br><span class="line">    objc_setAssociatedObject(<span class="keyword">self</span>, <span class="keyword">@selector</span>(isIgnoreEvent), @(isIgnoreEvent), OBJC_ASSOCIATION_RETAIN_NONATOMIC);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#pragma mark - runtime动态绑定自定义的两个属性</span></span><br><span class="line"></span><br><span class="line">- (<span class="built_in">NSTimeInterval</span>)timeInterval &#123;</span><br><span class="line">    <span class="keyword">return</span> [objc_getAssociatedObject(<span class="keyword">self</span>, _cmd) doubleValue];</span><br><span class="line">&#125;</span><br><span class="line">- (<span class="keyword">void</span>)setTimeInterval:(<span class="built_in">NSTimeInterval</span>)timeInterval &#123;</span><br><span class="line">    objc_setAssociatedObject(<span class="keyword">self</span>, <span class="keyword">@selector</span>(timeInterval), @(timeInterval), OBJC_ASSOCIATION_RETAIN_NONATOMIC);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">BOOL</span>)isIgnore &#123;</span><br><span class="line">    <span class="comment">//_cmd == @select(isIgnore); 和set方法里一致</span></span><br><span class="line">    <span class="keyword">return</span> [objc_getAssociatedObject(<span class="keyword">self</span>, _cmd) boolValue];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)setIsIgnore:(<span class="built_in">BOOL</span>)isIgnore &#123;</span><br><span class="line">    <span class="comment">// 注意BOOL类型 需要用OBJC_ASSOCIATION_RETAIN_NONATOMIC 不要用错，否则set方法会赋值出错</span></span><br><span class="line">    objc_setAssociatedObject(<span class="keyword">self</span>, <span class="keyword">@selector</span>(isIgnore), @(isIgnore), OBJC_ASSOCIATION_RETAIN_NONATOMIC);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+<h2 id="给button增加点击范围"><a href="#给button增加点击范围" class="headerlink" title="给button增加点击范围"></a>给button增加点击范围</h2><p>在 <code>&quot;UIButton+Swiz.h&quot;</code> 中加入：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//设置超出自身范围的额外点击区域</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">UIEdgeInsets</span> touchAreaInsets;</span><br></pre></td></tr></table></figure>
+<p>在 <code>&quot;UIButton+Swiz.m&quot;</code> 中加入：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- (<span class="built_in">UIEdgeInsets</span>)touchAreaInsets &#123;</span><br><span class="line">    <span class="keyword">return</span> [objc_getAssociatedObject(<span class="keyword">self</span>, _cmd) <span class="built_in">UIEdgeInsetsValue</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)setTouchAreaInsets:(<span class="built_in">UIEdgeInsets</span>)touchAreaInsets &#123;</span><br><span class="line">    <span class="built_in">NSValue</span> *value = [<span class="built_in">NSValue</span> valueWithUIEdgeInsets:touchAreaInsets];</span><br><span class="line">    objc_setAssociatedObject(<span class="keyword">self</span>, <span class="keyword">@selector</span>(touchAreaInsets), value, OBJC_ASSOCIATION_RETAIN_NONATOMIC);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="built_in">BOOL</span>)pointInside:(<span class="built_in">CGPoint</span>)point withEvent:(<span class="built_in">UIEvent</span> *)event &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">UIEdgeInsets</span> touchAreaInsets = <span class="keyword">self</span>.touchAreaInsets;</span><br><span class="line">    <span class="built_in">CGRect</span> bounds = <span class="keyword">self</span>.bounds;</span><br><span class="line">    bounds = <span class="built_in">CGRectMake</span>(bounds.origin.x - touchAreaInsets.left, bounds.origin.y - touchAreaInsets.top, bounds.size.width + touchAreaInsets.left + touchAreaInsets.right, bounds.size.height + touchAreaInsets.top + touchAreaInsets.bottom);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">CGRectContainsPoint</span>(bounds, point);</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="判断类中是否含有该属性"><a href="#判断类中是否含有该属性" class="headerlink" title="判断类中是否含有该属性"></a>判断类中是否含有该属性</h2><p>在有些时候我们需要通过KVC去修改某个类的私有变量，但是又不知道该属性是否存在，如果类中不存在该属性，那么通过KVC赋值就会crash，这时我们可以通过运行时进行判断，可在 <code>NSObject</code> 的分类中增加如下方法:</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> 判断类中是否含有该属性</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> @param property 属性名称</span></span><br><span class="line"><span class="comment"> @return 判断结果</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">- (<span class="built_in">BOOL</span>)hasProperty:(<span class="built_in">NSString</span> *)property &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">BOOL</span> flag = <span class="literal">NO</span>;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">    Ivar *ivars = class_copyIvarList([<span class="keyword">self</span> <span class="keyword">class</span>], &amp;count);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">char</span> *propertyName = ivar_getName(ivars[i]);</span><br><span class="line">        <span class="built_in">NSString</span> *propertyString = [<span class="built_in">NSString</span> stringWithUTF8String:propertyName];</span><br><span class="line">        <span class="keyword">if</span> ([propertyString isEqualToString:property]) &#123;</span><br><span class="line">            flag = <span class="literal">YES</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
     
     
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    拾忆
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/2018/03/22/iOS runtime 总结（七）---- 实际使用/" title="iOS runtime 总结（七）---- 实际使用">http://yoursite.com/2018/03/22/iOS runtime 总结（七）---- 实际使用/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/runtime/" rel="tag"><i class="fa fa-tag"></i> runtime</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/21/iOS runtime 总结（六）---- 使用场景/" rel="next" title="iOS runtime 总结（六）---- 使用场景">
+                <i class="fa fa-chevron-left"></i> iOS runtime 总结（六）---- 使用场景
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/28/iOS RunLoop 总结/" rel="prev" title="iOS RunLoop 总结">
+                iOS RunLoop 总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
   </div>
 
 
@@ -390,8 +647,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -498,6 +764,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#引言"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础准备"><span class="nav-number">2.</span> <span class="nav-text">基础准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#给button增加个防止连续重复点击的时间差"><span class="nav-number">3.</span> <span class="nav-text">给button增加个防止连续重复点击的时间差</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#给button增加点击范围"><span class="nav-number">4.</span> <span class="nav-text">给button增加点击范围</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断类中是否含有该属性"><span class="nav-number">5.</span> <span class="nav-text">判断类中是否含有该属性</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
