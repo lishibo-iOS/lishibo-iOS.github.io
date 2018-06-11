@@ -118,10 +118,12 @@
 <meta property="og:site_name" content="拾忆的技术博客">
 <meta property="og:description" content="在上篇文章中提到了如何免费通过github和hexo创建一个自己的博客，在此将通过next为例，演示一遍配置的过程（喜欢其他主题的可以在此绕过了）  一、前言常用命令及文件地址：部署到本地预览查看三部曲： hexo clean （清除缓存） hexo g (生成静态网页) hexo s (本地启动预览查看)  部署到git服务器上： hexo deploy   博客配置文件地址： ~/blog/">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-16T09:27:03.000Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/10.png">
+<meta property="og:updated_time" content="2018-06-11T07:38:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博客搭建（二）-- 使用next主题配置博客基本信息">
 <meta name="twitter:description" content="在上篇文章中提到了如何免费通过github和hexo创建一个自己的博客，在此将通过next为例，演示一遍配置的过程（喜欢其他主题的可以在此绕过了）  一、前言常用命令及文件地址：部署到本地预览查看三部曲： hexo clean （清除缓存） hexo g (生成静态网页) hexo s (本地启动预览查看)  部署到git服务器上： hexo deploy   博客配置文件地址： ~/blog/">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/10.png">
 
 
 
@@ -435,7 +437,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,130 字
+                  3,042 字
                 </span>
               
 
@@ -451,7 +453,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  13 分钟
+                  12 分钟
                 </span>
               
             </div>
@@ -729,20 +731,60 @@ social_icons:
   #transition: false
   GitHub: github
 </code></pre><h4 id="8-给站点添加友情链接功能"><a href="#8-给站点添加友情链接功能" class="headerlink" title="8.给站点添加友情链接功能"></a>8.给站点添加友情链接功能</h4><p>打开主题配置文件，进行如下配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">	links_title: 友情链接</span><br><span class="line">	links:</span><br><span class="line">	    #百度: http://www.baidu.com/</span><br><span class="line">	    #新浪: http://example.com/</span><br><span class="line">```	    </span><br><span class="line"></span><br><span class="line">##  三、next主题的高级配置和一些炫酷的效果</span><br><span class="line"></span><br><span class="line">### （一） 增加评论系统</span><br><span class="line">	</span><br><span class="line">百度了一下最新的消息，当前版本的next主题中已经内置支持了各种各样的评论系统，但由于政策的原因（需要实名评论），导致大多数的评论插件都已经失效了，而国外的一些加载比较慢。</span><br><span class="line"></span><br><span class="line">这里附上gitment的评论集成方式[集成流程](https://jingyan.baidu.com/article/2f9b480de2b5b341cb6cc2be.html)</span><br><span class="line"></span><br><span class="line">**gitment**（依托于github issue，能够自己管理，而且被墙的概率小），不过兼容性不太好（需要chrome内核才行），本人使用的gitment，有一个小问题，就是每次发布文章时需要登录下自己的github账号去初始化一下评论，评论功能才能使用，否则会提示“未开放评论”</span><br><span class="line"></span><br><span class="line">**Hypercomments** 是国外的一个第三方评论平台</span><br><span class="line"></span><br><span class="line">**多说** 在2017年06月01日就关闭评论服务了</span><br><span class="line"></span><br><span class="line">**网易云跟贴** 2017年08月01日也停止服务了</span><br><span class="line"></span><br><span class="line">**来必力** (韩国人弄的)总是乱码</span><br><span class="line"></span><br><span class="line">**DISQUS** 外国的，加载慢 </span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">### （二） 隐藏网页底部powered By Hexo / 强力驱动</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">打开主题配置文件，找到如下图位置，将powered设置为 false，theme下的enable 设置为 false</span><br><span class="line"></span><br><span class="line">![picture10](https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/10.png)</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">### （三） 设置首页文章列表不显示全文(只显示预览)</span><br><span class="line"></span><br><span class="line">* 进入hexo博客项目的themes/next目录</span><br><span class="line">* 打开_config.yml文件</span><br><span class="line">* 搜索&quot;auto_excerpt&quot;,找到如下部分：</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		# Automatically Excerpt. Not recommand.</span><br><span class="line">		# Please use &lt;!-- more --&gt; in the post to control excerpt accurately.</span><br><span class="line">		auto_excerpt:</span><br><span class="line">		  enable: false</span><br><span class="line">		  length: 150</span><br><span class="line"></span><br><span class="line">	  </span><br><span class="line">* 把enable改为对应的false改为true，length设置下，然后hexo d -g，再进主页，问题就解决了！</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">### （四） 增加本地搜索功能</span><br><span class="line"></span><br><span class="line">#### 添加百度/谷歌/本地 自定义站点内容搜索</span><br><span class="line"></span><br><span class="line">1. 安装 hexo-generator-searchdb，在站点的根目录下执行以下命令：</span><br><span class="line"></span><br><span class="line">		npm install hexo-generator-searchdb --save</span><br><span class="line">	</span><br><span class="line">2. 编辑博客配置文件，新增以下内容到任意位置：</span><br><span class="line"></span><br><span class="line">		search:</span><br><span class="line">			  path: search.xml</span><br><span class="line">			  field: post</span><br><span class="line">			  format: html</span><br><span class="line">			  limit: 10000</span><br><span class="line">			  </span><br><span class="line">3. 编辑主题配置文件，启用本地搜索功能：</span><br><span class="line"></span><br><span class="line">		# Local search</span><br><span class="line">		local_search:</span><br><span class="line">		  enable: true</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">### （五） 给 hexo next 主题加上背景图片</span><br><span class="line"></span><br><span class="line">给 hexo next 加上背景图片，只需要在 themes\next\source\css_custom\custom.styl 文件中添加几行代码：</span><br></pre></td></tr></table></figure>
-<p>@media screen and (min-width:1200px) {</p>
-<pre><code>body {
-background-image:url(/images/background.jpg);
-background-repeat: no-repeat;
-background-attachment:fixed;
-background-position:50% 50%; 
-}
-
-#footer a {
-    color:#eee;
-}
-</code></pre><p>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">repeat、attachment、position就是调整图片的位置，不重复出现、不滚动等等。</span><br><span class="line"></span><br><span class="line">完成这一步其实背景就会自动更换了，但是会出现一个问题，因为next主题的背景是纯透明的，这样子就造成背景图片的影响看不见文字，这对于博客来说肯定不行。</span><br><span class="line"></span><br><span class="line">那么就需要调整背景的不透明度了。同样是修改themes\next\source\css\ _custom\custom.styl文件。在后面添加如下代码</span><br></pre></td></tr></table></figure></p>
-<p>.main-inner {<br>    margin-top: 60px;<br>    padding: 60px 60px 60px 60px;<br>    background: #fff;<br>    opacity: 0.8;<br>    min-height: 500px;<br>}<br><code>`</code></p>
+<pre><code>links_title: 友情链接
+links:
+    #百度: http://www.baidu.com/
+    #新浪: http://example.com/
+</code></pre><h2 id="三、next主题的高级配置和一些炫酷的效果"><a href="#三、next主题的高级配置和一些炫酷的效果" class="headerlink" title="三、next主题的高级配置和一些炫酷的效果"></a>三、next主题的高级配置和一些炫酷的效果</h2><h3 id="（一）-增加评论系统"><a href="#（一）-增加评论系统" class="headerlink" title="（一） 增加评论系统"></a>（一） 增加评论系统</h3><p>百度了一下最新的消息，当前版本的next主题中已经内置支持了各种各样的评论系统，但由于政策的原因（需要实名评论），导致大多数的评论插件都已经失效了，而国外的一些加载比较慢。</p>
+<p>这里附上gitment的评论集成方式<a href="https://jingyan.baidu.com/article/2f9b480de2b5b341cb6cc2be.html" target="_blank" rel="noopener">集成流程</a></p>
+<p><strong>gitment</strong>（依托于github issue，能够自己管理，而且被墙的概率小），不过兼容性不太好（需要chrome内核才行），本人使用的gitment，有一个小问题，就是每次发布文章时需要登录下自己的github账号去初始化一下评论，评论功能才能使用，否则会提示“未开放评论”</p>
+<p><strong>Hypercomments</strong> 是国外的一个第三方评论平台</p>
+<p><strong>多说</strong> 在2017年06月01日就关闭评论服务了</p>
+<p><strong>网易云跟贴</strong> 2017年08月01日也停止服务了</p>
+<p><strong>来必力</strong> (韩国人弄的)总是乱码</p>
+<p><strong>DISQUS</strong> 外国的，加载慢 </p>
+<hr>
+<h3 id="（二）-隐藏网页底部powered-By-Hexo-强力驱动"><a href="#（二）-隐藏网页底部powered-By-Hexo-强力驱动" class="headerlink" title="（二） 隐藏网页底部powered By Hexo / 强力驱动"></a>（二） 隐藏网页底部powered By Hexo / 强力驱动</h3><p>打开主题配置文件，找到如下图位置，将powered设置为 false，theme下的enable 设置为 false</p>
+<p><img src="https://raw.githubusercontent.com/lishibo-iOS/pictures/master/picture1/10.png" alt="picture10"></p>
+<hr>
+<h3 id="（三）-设置首页文章列表不显示全文-只显示预览"><a href="#（三）-设置首页文章列表不显示全文-只显示预览" class="headerlink" title="（三） 设置首页文章列表不显示全文(只显示预览)"></a>（三） 设置首页文章列表不显示全文(只显示预览)</h3><ul>
+<li>进入hexo博客项目的themes/next目录</li>
+<li>打开_config.yml文件</li>
+<li>搜索”auto_excerpt”,找到如下部分：</li>
+</ul>
+<pre><code># Automatically Excerpt. Not recommand.
+# Please use &lt;!-- more --&gt; in the post to control excerpt accurately.
+auto_excerpt:
+  enable: false
+  length: 150
+</code></pre><ul>
+<li>把enable改为对应的false改为true，length设置下，然后hexo d -g，再进主页，问题就解决了！</li>
+</ul>
+<hr>
+<h3 id="（四）-增加本地搜索功能"><a href="#（四）-增加本地搜索功能" class="headerlink" title="（四） 增加本地搜索功能"></a>（四） 增加本地搜索功能</h3><h4 id="添加百度-谷歌-本地-自定义站点内容搜索"><a href="#添加百度-谷歌-本地-自定义站点内容搜索" class="headerlink" title="添加百度/谷歌/本地 自定义站点内容搜索"></a>添加百度/谷歌/本地 自定义站点内容搜索</h4><ol>
+<li><p>安装 hexo-generator-searchdb，在站点的根目录下执行以下命令：</p>
+<pre><code>npm install hexo-generator-searchdb --save
+</code></pre></li>
+<li><p>编辑博客配置文件，新增以下内容到任意位置：</p>
+<pre><code>search:
+      path: search.xml
+      field: post
+      format: html
+      limit: 10000
+</code></pre></li>
+<li><p>编辑主题配置文件，启用本地搜索功能：</p>
+<pre><code># Local search
+local_search:
+  enable: true
+</code></pre></li>
+</ol>
+<hr>
+<h3 id="（五）-给-hexo-next-主题加上背景图片"><a href="#（五）-给-hexo-next-主题加上背景图片" class="headerlink" title="（五） 给 hexo next 主题加上背景图片"></a>（五） 给 hexo next 主题加上背景图片</h3><p>给 hexo next 加上背景图片，只需要在 themes\next\source\css_custom\custom.styl 文件中添加几行代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@media screen and (min-width:1200px) &#123;</span><br><span class="line"></span><br><span class="line">    body &#123;</span><br><span class="line">    background-image:url(/images/background.jpg);</span><br><span class="line">    background-repeat: no-repeat;</span><br><span class="line">    background-attachment:fixed;</span><br><span class="line">    background-position:50% 50%; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    #footer a &#123;</span><br><span class="line">        color:#eee;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>repeat、attachment、position就是调整图片的位置，不重复出现、不滚动等等。</p>
+<p>完成这一步其实背景就会自动更换了，但是会出现一个问题，因为next主题的背景是纯透明的，这样子就造成背景图片的影响看不见文字，这对于博客来说肯定不行。</p>
+<p>那么就需要调整背景的不透明度了。同样是修改themes\next\source\css\ _custom\custom.styl文件。在后面添加如下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.main-inner &#123; </span><br><span class="line">    margin-top: 60px;</span><br><span class="line">    padding: 60px 60px 60px 60px;</span><br><span class="line">    background: #fff;</span><br><span class="line">    opacity: 0.8;</span><br><span class="line">    min-height: 500px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>background: #fff; 白色</p>
 <p>opacity: 0.8;不透明度</p>
 <h3 id="（六）-其他炫酷效果可参考-hexo的next主题个性化教程-打造炫酷网站"><a href="#（六）-其他炫酷效果可参考-hexo的next主题个性化教程-打造炫酷网站" class="headerlink" title="（六） 其他炫酷效果可参考 hexo的next主题个性化教程:打造炫酷网站"></a>（六） 其他炫酷效果可参考 <a href="https://www.jianshu.com/p/f054333ac9e6" target="_blank" rel="noopener">hexo的next主题个性化教程:打造炫酷网站</a></h3><hr>
@@ -1031,7 +1073,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、前言"><span class="nav-number">1.</span> <span class="nav-text">一、前言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用命令及文件地址："><span class="nav-number">1.0.1.</span> <span class="nav-text">常用命令及文件地址：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、next主题的安装和基本配置"><span class="nav-number">2.</span> <span class="nav-text">二、next主题的安装和基本配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（一）安装"><span class="nav-number">2.1.</span> <span class="nav-text">（一）安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（二）-基本信息的配置"><span class="nav-number">2.2.</span> <span class="nav-text">（二） 基本信息的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、网站标题、作者、语言"><span class="nav-number">2.2.1.</span> <span class="nav-text">1、网站标题、作者、语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、next主题的风格设置"><span class="nav-number">2.2.2.</span> <span class="nav-text">2、next主题的风格设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、设置菜单选项"><span class="nav-number">2.2.3.</span> <span class="nav-text">3、设置菜单选项</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、创建上述菜单选项中对应的页面"><span class="nav-number">2.2.4.</span> <span class="nav-text">4、创建上述菜单选项中对应的页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、给文章添加分类和标签"><span class="nav-number">2.2.5.</span> <span class="nav-text">5、给文章添加分类和标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-修改作者头像并旋转"><span class="nav-number">2.2.6.</span> <span class="nav-text">6.修改作者头像并旋转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-头像下方添加自己的github等信息"><span class="nav-number">2.2.7.</span> <span class="nav-text">7.头像下方添加自己的github等信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-给站点添加友情链接功能"><span class="nav-number">2.2.8.</span> <span class="nav-text">8.给站点添加友情链接功能</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（六）-其他炫酷效果可参考-hexo的next主题个性化教程-打造炫酷网站"><span class="nav-number">2.3.</span> <span class="nav-text">（六） 其他炫酷效果可参考 hexo的next主题个性化教程:打造炫酷网站</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、前言"><span class="nav-number">1.</span> <span class="nav-text">一、前言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用命令及文件地址："><span class="nav-number">1.0.1.</span> <span class="nav-text">常用命令及文件地址：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、next主题的安装和基本配置"><span class="nav-number">2.</span> <span class="nav-text">二、next主题的安装和基本配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（一）安装"><span class="nav-number">2.1.</span> <span class="nav-text">（一）安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（二）-基本信息的配置"><span class="nav-number">2.2.</span> <span class="nav-text">（二） 基本信息的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、网站标题、作者、语言"><span class="nav-number">2.2.1.</span> <span class="nav-text">1、网站标题、作者、语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、next主题的风格设置"><span class="nav-number">2.2.2.</span> <span class="nav-text">2、next主题的风格设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、设置菜单选项"><span class="nav-number">2.2.3.</span> <span class="nav-text">3、设置菜单选项</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、创建上述菜单选项中对应的页面"><span class="nav-number">2.2.4.</span> <span class="nav-text">4、创建上述菜单选项中对应的页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、给文章添加分类和标签"><span class="nav-number">2.2.5.</span> <span class="nav-text">5、给文章添加分类和标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-修改作者头像并旋转"><span class="nav-number">2.2.6.</span> <span class="nav-text">6.修改作者头像并旋转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-头像下方添加自己的github等信息"><span class="nav-number">2.2.7.</span> <span class="nav-text">7.头像下方添加自己的github等信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-给站点添加友情链接功能"><span class="nav-number">2.2.8.</span> <span class="nav-text">8.给站点添加友情链接功能</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、next主题的高级配置和一些炫酷的效果"><span class="nav-number">3.</span> <span class="nav-text">三、next主题的高级配置和一些炫酷的效果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（一）-增加评论系统"><span class="nav-number">3.1.</span> <span class="nav-text">（一） 增加评论系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（二）-隐藏网页底部powered-By-Hexo-强力驱动"><span class="nav-number">3.2.</span> <span class="nav-text">（二） 隐藏网页底部powered By Hexo / 强力驱动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（三）-设置首页文章列表不显示全文-只显示预览"><span class="nav-number">3.3.</span> <span class="nav-text">（三） 设置首页文章列表不显示全文(只显示预览)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（四）-增加本地搜索功能"><span class="nav-number">3.4.</span> <span class="nav-text">（四） 增加本地搜索功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加百度-谷歌-本地-自定义站点内容搜索"><span class="nav-number">3.4.1.</span> <span class="nav-text">添加百度/谷歌/本地 自定义站点内容搜索</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（五）-给-hexo-next-主题加上背景图片"><span class="nav-number">3.5.</span> <span class="nav-text">（五） 给 hexo next 主题加上背景图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（六）-其他炫酷效果可参考-hexo的next主题个性化教程-打造炫酷网站"><span class="nav-number">3.6.</span> <span class="nav-text">（六） 其他炫酷效果可参考 hexo的next主题个性化教程:打造炫酷网站</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1079,7 +1121,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共29.8k字</span>
+  <span class="post-count">博客全站共29.7k字</span>
 </div>
         
 
