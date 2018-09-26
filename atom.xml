@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-21T09:42:52.000Z</updated>
+  <updated>2018-09-26T07:37:41.923Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git命令的基本使用</title>
+    <link href="http://yoursite.com/2018/09/26/git%E5%91%BD%E4%BB%A4%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E7%9A%84/"/>
+    <id>http://yoursite.com/2018/09/26/git命令的基本使用的/</id>
+    <published>2018-09-26T07:37:38.000Z</published>
+    <updated>2018-09-26T07:37:41.923Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="git命令的基本使用"><a href="#git命令的基本使用" class="headerlink" title="git命令的基本使用"></a>git命令的基本使用</h2><h4 id="1-先在github上创建一个项目：例如-vue-demo"><a href="#1-先在github上创建一个项目：例如-vue-demo" class="headerlink" title="1.先在github上创建一个项目：例如 vue-demo"></a>1.先在github上创建一个项目：例如 vue-demo</h4><h4 id="2-在本地vue-demo-项目中使用-git-init-把其变成git可以管理的仓库"><a href="#2-在本地vue-demo-项目中使用-git-init-把其变成git可以管理的仓库" class="headerlink" title="2. 在本地vue-demo 项目中使用 git init 把其变成git可以管理的仓库"></a>2. 在本地vue-demo 项目中使用 git init 把其变成git可以管理的仓库</h4><h4 id="3-若要忽略本地的文件或文件夹不被提交到github-，则需要在项目根目录下创建-gitignore-文件"><a href="#3-若要忽略本地的文件或文件夹不被提交到github-，则需要在项目根目录下创建-gitignore-文件" class="headerlink" title="3. 若要忽略本地的文件或文件夹不被提交到github ，则需要在项目根目录下创建 .gitignore 文件"></a>3. 若要忽略本地的文件或文件夹不被提交到github ，则需要在项目根目录下创建 .gitignore 文件</h4><p><code>touch .gitignore</code></p><h4 id="4-打开文件，编辑内容，例如："><a href="#4-打开文件，编辑内容，例如：" class="headerlink" title="4. 打开文件，编辑内容，例如："></a>4. 打开文件，编辑内容，例如：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node_modules/ </span><br><span class="line">update.txt</span><br></pre></td></tr></table></figure><p>则可以忽略目录下node_modules 文件夹及updata.txt 文件.</p><p><a href="https://github.com/github/gitignore" target="_blank" rel="noopener">配置文件可以在github在线浏览</a></p><h4 id="5-添加文件夹下所有文件到暂存区-git-add"><a href="#5-添加文件夹下所有文件到暂存区-git-add" class="headerlink" title="5. 添加文件夹下所有文件到暂存区 git add ."></a>5. 添加文件夹下所有文件到暂存区 git add .</h4><p><code>git add .</code></p><h4 id="6-把文件提交到仓库-git-commit-m-“”"><a href="#6-把文件提交到仓库-git-commit-m-“”" class="headerlink" title="6. 把文件提交到仓库 git-commit -m “”"></a>6. 把文件提交到仓库 git-commit -m “”</h4><p><code>git commit -m &#39;decriptions&#39;</code></p><h4 id="7-关联远程仓库-（第一次使用需要添加github公钥）"><a href="#7-关联远程仓库-（第一次使用需要添加github公钥）" class="headerlink" title="7.关联远程仓库 （第一次使用需要添加github公钥）"></a>7.关联远程仓库 （第一次使用需要添加github公钥）</h4><p><code>git remote add origin git@github.com:***/vue2.1-sell.git</code></p><p>或者</p><p><code>git remote add origin https://github.com/***/vue2.1-sell.git</code></p><h4 id="8-获取远程库与本地同步（远程仓库不为空需要这一步）"><a href="#8-获取远程库与本地同步（远程仓库不为空需要这一步）" class="headerlink" title="8.获取远程库与本地同步（远程仓库不为空需要这一步）"></a>8.获取远程库与本地同步（远程仓库不为空需要这一步）</h4><p><code>git pull --rebase origin master</code></p><h4 id="9-把本地内容推送到远程库-使用-git-push"><a href="#9-把本地内容推送到远程库-使用-git-push" class="headerlink" title="9.把本地内容推送到远程库 使用 git-push"></a>9.把本地内容推送到远程库 使用 git-push</h4><p><code>git push -u origin master</code></p><h4 id="以上内容就可以将本地文件推送到github上，并且可以自己设定不需要上传哪些文件"><a href="#以上内容就可以将本地文件推送到github上，并且可以自己设定不需要上传哪些文件" class="headerlink" title="以上内容就可以将本地文件推送到github上，并且可以自己设定不需要上传哪些文件"></a>以上内容就可以将本地文件推送到github上，并且可以自己设定不需要上传哪些文件</h4>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;git命令的基本使用&quot;&gt;&lt;a href=&quot;#git命令的基本使用&quot; class=&quot;headerlink&quot; title=&quot;git命令的基本使用&quot;&gt;&lt;/a&gt;git命令的基本使用&lt;/h2&gt;&lt;h4 id=&quot;1-先在github上创建一个项目：例如-vue-demo&quot;&gt;&lt;a
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="FMDB" scheme="http://yoursite.com/tags/FMDB/"/>
+    
+  </entry>
   
   <entry>
     <title>FMDB的基本使用</title>
